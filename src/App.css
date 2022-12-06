@@ -1,0 +1,12 @@
+.App {
+  transition: 0.2s ease;
+}
+
+.App[data-theme="light"] {
+  background-color: var(--background);
+}
+
+.App[data-theme="dark"] {
+  background-color: var(--background);
+}
+

@@ -1,0 +1,27 @@
+.toggleButton {
+  width: 05rem;
+  height: 05rem;
+
+  border: none;
+  border-radius: 50%;
+  background-color: #26262B;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.4s ease;
+
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+
+  box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.toggleButton:hover {
+
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  cursor: pointer;
+}

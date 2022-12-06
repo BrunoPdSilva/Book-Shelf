@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
 
 import { Eye } from 'phosphor-react';
+
 import Logo from '../../assets/book-lg.png';
 import LoginImg from '../../assets/login-image.svg';
 import './Login.css';
@@ -14,11 +15,10 @@ export function LoginPage() {
 
   const { login } = useLogin();
 
-  const handleLogin = (e) => {
+  const handleLogin = e => {
     e.preventDefault();
-
     login(email, password);
-  }
+  };
 
   return (
     <div className="loginPage">
@@ -55,7 +55,9 @@ export function LoginPage() {
             />
           </label>
 
-          <p>Não possui uma conta? <span>Cadastre-se</span></p>
+          <p>
+            Não possui uma conta? <span>Cadastre-se</span>
+          </p>
 
           <button>Fazer Login</button>
         </form>

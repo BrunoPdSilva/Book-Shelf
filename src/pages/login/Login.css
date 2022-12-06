@@ -22,7 +22,7 @@
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.6rem;
-  color: var(--white-100);
+  color: var(--title);
 }
 
 .loginPage main {
@@ -47,14 +47,14 @@
   font-size: 3.2rem;
   font-weight: 500;
   line-height: 3.8rem;
-  color: var(--white-100);
+  color: var(--title);
 }
 
 .loginPage main form p {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.1rem;
-  color: var(--white-50);
+  color: var(--text);
 
   margin-block: 0.6rem 4.6rem;
 }
@@ -65,7 +65,7 @@
 
   display: flex;
 
-  border-bottom: 1px solid var(--white-50);
+  border-bottom: 1px solid var(--text);
 }
 
 .loginPage main form .input-group input {
@@ -79,11 +79,11 @@
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.1rem;
-  color: var(--white-100);
+  color: var(--title);
 }
 
 .loginPage main form .input-group:focus-within {
-  border-bottom: 1px solid var(--white-100);
+  border-bottom: 1px solid var(--title);
 }
 
 .loginPage main form .showPasswordBtn {
