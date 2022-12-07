@@ -1,6 +1,7 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 import { Eye } from 'phosphor-react';
 
@@ -13,7 +14,8 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
-  const { login } = useLogin();
+  const { login, error } = useLogin();
+  const { userName } = useAuthContext();
 
   const handleLogin = e => {
     e.preventDefault();
@@ -22,14 +24,16 @@ export function LoginPage() {
 
   return (
     <div className="loginPage">
-      <header>
+      <header className="logo_header">
         <img src={Logo} alt="Logo, livros empilhados e um óculos em cima" />
         <h1>Book Shelf</h1>
       </header>
 
       <main>
-        <form onSubmit={handleLogin}>
-          <h1>Bem-vindo de volta, Bruno</h1>
+        <form onSubmit={handleLogin} className="form">
+          <h1>
+            {userName ? 'Bem-vindo de volta, Bruno' : 'Bem-vindo de volta'}
+          </h1>
           <p>Adoramos ter você de volta, faça login para continuar</p>
 
           <label className="input-group">
@@ -49,17 +53,25 @@ export function LoginPage() {
             />
             <Eye
               size={28}
-              color={showPassword ? '#FFF' : 'rgba(255, 255, 255, 0.5)'}
+              color={
+                showPassword
+                  ? 'var(--primary-color)'
+                  : 'var(--disableBTN-color)'
+              }
               onClick={() => setShowPassword(!showPassword)}
               className="showPasswordBtn"
             />
           </label>
+          {error && <span className="error">{error}</span>}
 
-          <p>
-            Não possui uma conta? <span>Cadastre-se</span>
+          <p className="signupMessage">
+            Não possui uma conta?{' '}
+            <Link to="/signup" style={{ color: 'var(--primary-color)' }}>
+              Cadastre-se
+            </Link>
           </p>
 
-          <button>Fazer Login</button>
+          <button type="submit">Fazer login</button>
         </form>
 
         <section className="sideImage">

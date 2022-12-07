@@ -1,7 +1,14 @@
+import { useLogout } from '../../hooks/useLogout';
+
 import './Home.css';
 
 export function Home() {
+  const { logout } = useLogout();
+
   return (
-    <h1 className='home'>Home</h1>
-  )
+    <div>
+      <h1 className="home">Home</h1>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
 }

@@ -7,7 +7,7 @@ export function useCollection(collec) {
   const [documents, setDocuments] = useState(null);
 
   useEffect(() => {
-    let collectionRef = collection(dataBase, collec);
+    const collectionRef = collection(dataBase, collec);
 
     const unsub = onSnapshot(collectionRef, snapshot => {
       let result = [];

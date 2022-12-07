@@ -1,0 +1,17 @@
+.signupPage {
+  width: min(100vw - 20%);
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupPage .input-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.signupPage button {
+  margin-top: 3.6rem;
+}
