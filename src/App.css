@@ -106,7 +106,7 @@ form.form button {
   line-height: 2.1rem;
   color: #ffffff;
 
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 

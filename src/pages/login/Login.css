@@ -1,3 +1,9 @@
+.loginPage {
+  height: min(100vh - 8.6rem);
+  display: flex;
+  align-items: center;
+}
+
 .loginPage main {
   width: min(100vw - 20%);
 

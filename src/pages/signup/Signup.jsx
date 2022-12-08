@@ -44,11 +44,6 @@ export function Signup() {
 
   return (
     <div className="signupPage">
-      <header className="logo_header">
-        <img src={Logo} alt="Logo, livros empilhados e um óculos em cima" />
-        <h1>Book Shelf</h1>
-      </header>
-
       <form onSubmit={handleSignup} className="form">
         <h1>Cadastre-se agora</h1>
         <p>Tenha informações sobre seus livros favoritos!</p>

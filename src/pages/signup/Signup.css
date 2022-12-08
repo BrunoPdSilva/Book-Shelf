@@ -1,5 +1,6 @@
 .signupPage {
   width: min(100vw - 20%);
+  height: min(100vh - 8.6rem);
   margin: auto;
 
   display: flex;

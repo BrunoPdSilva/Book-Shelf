@@ -24,11 +24,6 @@ export function LoginPage() {
 
   return (
     <div className="loginPage">
-      <header className="logo_header">
-        <img src={Logo} alt="Logo, livros empilhados e um óculos em cima" />
-        <h1>Book Shelf</h1>
-      </header>
-
       <main>
         <form onSubmit={handleLogin} className="form">
           <h1>

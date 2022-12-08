@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import useLocalStorage from 'use-local-storage';
 
+import { Navbar } from './components/Navbar';
 import { Home } from './pages/home/Home';
 import { LoginPage } from './pages/login/Login';
 import { Signup } from './pages/signup/Signup';
@@ -25,6 +26,7 @@ function App() {
     <div className="App" data-theme={theme}>
       {authIsReady && (
         <BrowserRouter>
+          <Navbar />
           <ToggleTheme toggle={toggleTheme} theme={theme} />
           <Routes>
             <Route
