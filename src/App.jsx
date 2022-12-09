@@ -26,7 +26,7 @@ function App() {
     <div className="App" data-theme={theme}>
       {authIsReady && (
         <BrowserRouter>
-          <Navbar />
+          <Navbar user={user} />
           <ToggleTheme toggle={toggleTheme} theme={theme} />
           <Routes>
             <Route

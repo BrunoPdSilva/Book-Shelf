@@ -1,10 +1,11 @@
-.loginPage {
+.login-page {
   height: min(100vh - 8.6rem);
+
   display: flex;
   align-items: center;
 }
 
-.loginPage main {
+.login-page main {
   width: min(100vw - 20%);
 
   margin: auto;
@@ -14,30 +15,30 @@
   grid-column-gap: 2.2rem;
 }
 
-.loginPage main .sideImage {
+.login-page main .side-image {
   display: flex;
 }
 
-.loginPage main .sideImage img {
+.login-page main .side-image img {
   min-width: 40rem;
   min-height: 30rem;
 }
 
-.loginPage form.form .input-group:last-of-type {
+.login-page form.form .input-group:last-of-type {
   margin-bottom: 0;
 }
 
-.loginPage form.form p.signupMessage {
+.login-page form.form p.signup-message {
   margin-top: 3.6rem;
 }
 
 @media (max-width: 850px) {
-  .loginPage main {
+  .login-page main {
     display: flex;
     justify-content: center;
   }
 
-  .loginPage main .sideImage {
+  .login-page main .side-image {
     display: none;
   }
 }

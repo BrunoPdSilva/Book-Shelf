@@ -1,4 +1,4 @@
-.signupPage {
+.signup-page {
   width: min(100vw - 20%);
   height: min(100vh - 8.6rem);
   margin: auto;
@@ -9,10 +9,10 @@
   justify-content: center;
 }
 
-.signupPage .input-group:last-of-type {
+.signup-page .input-group:last-of-type {
   margin-bottom: 0;
 }
 
-.signupPage button {
+.signup-page button {
   margin-top: 3.6rem;
 }

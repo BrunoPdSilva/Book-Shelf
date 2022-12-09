@@ -1,7 +1,6 @@
 import { useState, useReducer } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 
-import Logo from '../../assets/book-lg.png';
 import './Signup.css';
 
 function reducer(state, action) {
@@ -43,7 +42,7 @@ export function Signup() {
   };
 
   return (
-    <div className="signupPage">
+    <div className="signup-page">
       <form onSubmit={handleSignup} className="form">
         <h1>Cadastre-se agora</h1>
         <p>Tenha informações sobre seus livros favoritos!</p>
@@ -92,8 +91,10 @@ export function Signup() {
             required
           />
         </label>
-        {error && <span className="error">{error}</span>}
-        {passwordError && <span className="error">{passwordError}</span>}
+        {error && <span className="error-message">{error}</span>}
+        {passwordError && (
+          <span className="error-message">{passwordError}</span>
+        )}
 
         <button type="submit">Cadastrar-se</button>
       </form>

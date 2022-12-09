@@ -3,7 +3,7 @@
   --title: #ffffff;
   --text: rgba(255, 255, 255, 0.5);
   --primary-color: #8078bf;
-  --disableBTN-color: #9791c0;
+  --disableBTN-color: #BEBADE;
 
   --webkit-font-smoothing: antialiased;
 
@@ -16,6 +16,10 @@
   --title: #453d83;
   --text: rgba(69, 61, 131, 0.8);
   --primary-color: #8078bf;
+}
+
+::-ms-reveal {
+  display: none;
 }
 
 * {

@@ -5,8 +5,7 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 import { Eye } from 'phosphor-react';
 
-import Logo from '../../assets/book-lg.png';
-import LoginImg from '../../assets/login-image.svg';
+import SideImage from '../../assets/login-image.svg';
 import './Login.css';
 
 export function LoginPage() {
@@ -23,7 +22,7 @@ export function LoginPage() {
   };
 
   return (
-    <div className="loginPage">
+    <div className="login-page">
       <main>
         <form onSubmit={handleLogin} className="form">
           <h1>
@@ -54,24 +53,24 @@ export function LoginPage() {
                   : 'var(--disableBTN-color)'
               }
               onClick={() => setShowPassword(!showPassword)}
-              className="showPasswordBtn"
+              className="show-password-button"
             />
           </label>
-          {error && <span className="error">{error}</span>}
+          {error && <span className="error-message">{error}</span>}
 
-          <p className="signupMessage">
+          <p className="signup-message">
             Não possui uma conta?{' '}
             <Link to="/signup" style={{ color: 'var(--primary-color)' }}>
               Cadastre-se
             </Link>
           </p>
 
-          <button type="submit">Fazer login</button>
+          <button type="submit">Entrar</button>
         </form>
 
-        <section className="sideImage">
+        <section className="side-image">
           <img
-            src={LoginImg}
+            src={SideImage}
             alt="Imagem de livros com um óculos em cima e uma caneca do lado"
           />
         </section>
