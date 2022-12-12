@@ -1,5 +1,6 @@
 :root {
   --background: #121212;
+  --carousel-bg: #121212;
   --title: #ffffff;
   --text: rgba(255, 255, 255, 0.5);
   --primary-color: #8078bf;
@@ -13,6 +14,7 @@
 
 [data-theme='light'] {
   --background: #f6f6f6;
+  --carousel-bg: #D9D9D9;
   --title: #453d83;
   --text: rgba(69, 61, 131, 0.8);
   --primary-color: #8078bf;
@@ -36,5 +38,5 @@ body,
 #root,
 .App {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
