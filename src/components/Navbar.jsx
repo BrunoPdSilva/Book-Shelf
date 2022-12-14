@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 
@@ -22,13 +23,13 @@ export function Navbar({ user }) {
         {user && (
           <ul className="nav-links">
             <Link to="/">
-              <li>Livros</li>
+              <motion.li whileHover={{ scale: 1.1 }}>Livros</motion.li>
             </Link>
             <Link to="/">
-              <li>Contato</li>
+              <motion.li whileHover={{ scale: 1.1 }}>Contato</motion.li>
             </Link>
             <Link to="/">
-              <li>Sobre</li>
+              <motion.li whileHover={{ scale: 1.1 }}>Sobre</motion.li>
             </Link>
           </ul>
         )}

@@ -1,9 +1,18 @@
+import { BookCard } from '../../components/BookCard';
 
-import { CaretDoubleLeft, CaretDoubleRight, MagnifyingGlass } from 'phosphor-react';
-import sideImage from "../../assets/home-side-image.svg";
+import { useCollection } from '../../hooks/useCollection';
+
+import {
+  CaretDoubleLeft,
+  CaretDoubleRight,
+  MagnifyingGlass,
+} from 'phosphor-react';
+import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';
 
 export function Home() {
+  const { documents: books } = useCollection('books');
+
   return (
     <div className="home-page">
       <main>
@@ -28,7 +37,12 @@ export function Home() {
       </main>
       <div className="books-carousel">
         <CaretDoubleLeft size={26} color="var(--title)" />
-        <section className='carousel'></section>
+        <section className="carousel">
+          {books &&
+            books.map((book, index) => (
+              <BookCard key={index} book={book} /* isCardActive={true}   */ />
+            ))}
+        </section>
         <CaretDoubleRight size={26} color="var(--title)" />
       </div>
     </div>

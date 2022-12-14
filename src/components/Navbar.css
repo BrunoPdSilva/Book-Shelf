@@ -36,10 +36,6 @@
   transition: 0.3s ease-in-out;
 }
 
-.navbar .nav-links li:hover {
-  transform: scale(1.1);
-}
-
 .navbar .buttons-container {
   display: flex;
   gap: 1.6rem;

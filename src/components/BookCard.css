@@ -1,0 +1,51 @@
+.card {
+  width: 22rem;
+  height: 34.4rem;
+
+  background: none;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  cursor: pointer;
+
+
+  /* transition: 0.3s ease-in-out; */
+}
+
+.card img.card-image {
+  width: 18rem;
+  height: 24rem;
+  border-radius: 4px;
+}
+
+.card footer {
+  width: 75%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.card footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.card footer div span {
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  color: #ffffff;
+}
+
+.card.card-active {
+  background-color: #6c63ff;
+}
+
