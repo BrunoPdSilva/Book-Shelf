@@ -20,6 +20,14 @@
   --primary-color: #8078bf;
 }
 
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 ::-ms-reveal {
   display: none;
 }

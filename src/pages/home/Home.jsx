@@ -1,4 +1,7 @@
 import { BookCard } from '../../components/BookCard';
+import { motion } from 'framer-motion';
+
+import { useState, useRef, useEffect } from 'react';
 
 import { useCollection } from '../../hooks/useCollection';
 
@@ -11,7 +14,14 @@ import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';
 
 export function Home() {
+  const [width, setWidth] = useState(0);
   const { documents: books } = useCollection('books');
+  const carousel = useRef();
+
+  useEffect(() => {
+    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth);
+    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+  }, []);
 
   return (
     <div className="home-page">
@@ -35,16 +45,21 @@ export function Home() {
           <img src={sideImage} alt="Menina sentada lendo um livro" />
         </section>
       </main>
-      <div className="books-carousel">
-        <CaretDoubleLeft size={26} color="var(--title)" />
-        <section className="carousel">
-          {books &&
-            books.map((book, index) => (
-              <BookCard key={index} book={book} /* isCardActive={true}   */ />
-            ))}
-        </section>
-        <CaretDoubleRight size={26} color="var(--title)" />
-      </div>
+
+      <motion.div className="books-carousel" whileTap={{ cursor: 'grabbing' }}>
+        {/* <CaretDoubleLeft size={26} color="var(--title)" /> */}
+        <motion.section className="carousel" ref={carousel}>
+          <motion.div
+            className="images"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {books &&
+              books.map((book, index) => <BookCard key={index} book={book} />)}
+          </motion.div>
+        </motion.section>
+        {/* <CaretDoubleRight size={26} color="var(--title)" /> */}
+      </motion.div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ export function BookCard({ book }) {
       className={isCardActive ? 'card card-active' : 'card'}
       onMouseOver={() => setIsCardAtive(true)}
       onMouseOut={() => setIsCardAtive(false)}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.4 }}
     >
       <img src={book.image} alt="Card image" className="card-image" />
