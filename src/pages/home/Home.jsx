@@ -28,7 +28,7 @@ export function Home() {
 
           <div className="search-input-group">
             <button>
-              <MagnifyingGlass size={26} color="var(--title)" />
+              <MagnifyingGlass size={26} color="var(--title)" className='icon'/>
             </button>
             <input
               type="text"

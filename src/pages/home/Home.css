@@ -13,6 +13,11 @@
   grid-template-columns: minmax(30rem, 1fr) minmax(20rem, 1fr);
 }
 
+.home-page main header {
+  max-width: 52rem;
+  margin: auto;
+}
+
 .home-page main header h1 {
   font-family: 'Montserrat';
   font-size: 3.6rem;
@@ -101,4 +106,75 @@ section.carousel-container {
 
   display: flex;
   align-items: center;
+}
+
+.home-page .icon {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+@media (max-width: 1170px) {
+  .home-page main {
+    grid-column-gap: 3%;
+  }
+}
+
+@media (max-width: 988px) {
+  .home-page main header h1 {
+    font-size: 3.2rem;
+  }
+
+  /* .home-page main {
+    grid-template-columns: 1fr;
+    grid-row-gap: 3.6rem;
+  }
+
+.home-page main header {
+  text-align: center;
+} */
+}
+
+@media (max-width: 878px) {
+  .home-page main header h1 {
+    font-size: 3rem;
+  }
+  .home-page main header h2 {
+    font-size: 2rem;
+  }
+
+  .home-page main .search-input-group input {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 830px) {
+  .home-page main {
+    padding-bottom: 0rem;
+    grid-template-columns: 1fr;
+    grid-row-gap: 3.6rem;
+  }
+
+  .home-page main header h2 {
+    padding-bottom: 4.6rem;
+  }
+
+  .home-page .home-side-image {
+    height: auto;
+    width: 100%;
+  }
+
+  .home-side-image img {
+    max-height: 32rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-page header {
+    text-align: center;
+  }
+
+  .home-page main header h1 {
+    line-height: 4.9rem;
+  }
 }

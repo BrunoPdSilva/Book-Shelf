@@ -8,7 +8,7 @@
 
   --webkit-font-smoothing: antialiased;
 
-  font-size: 62.5%;
+  font-size: 58%;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -47,4 +47,10 @@ body,
 .App {
   width: 100%;
   min-height: 100%;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    font-size: 52%;
+  }
 }

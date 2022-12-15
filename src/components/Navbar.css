@@ -83,17 +83,8 @@
 }
 
 @media (max-width: 1040px) {
-  .navbar .logo-image {
-    width: 12rem;
-    height: 4.2rem;
-  }
-
   .navbar .nav-links {
     gap: 3.6rem;
-  }
-
-  .navbar .nav-links li {
-    font-size: 1.4rem;
   }
 
   .navbar .buttons-container {
@@ -102,7 +93,6 @@
 
   .navbar .buttons-container button {
     padding: 1.2rem 1.8rem;
-    font-size: 1.4rem;
   }
 }
 
