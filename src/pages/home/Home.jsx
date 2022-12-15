@@ -1,26 +1,22 @@
-import { BookCard } from '../../components/BookCard';
+import { useState, useEffect, useRef } from 'react';
+import { useCollection } from '../../hooks/useCollection';
 import { motion } from 'framer-motion';
 
-import { useState, useRef, useEffect } from 'react';
+import { MagnifyingGlass } from 'phosphor-react';
+import { BookCard } from '../../components/BookCard';
 
-import { useCollection } from '../../hooks/useCollection';
-
-import {
-  CaretDoubleLeft,
-  CaretDoubleRight,
-  MagnifyingGlass,
-} from 'phosphor-react';
 import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';
 
 export function Home() {
-  const [width, setWidth] = useState(0);
   const { documents: books } = useCollection('books');
+  const [width, setWidth] = useState(0);
   const carousel = useRef();
 
   useEffect(() => {
-    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth);
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+    setTimeout(() => {
+      setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+    }, 500);
   }, []);
 
   return (
@@ -46,20 +42,25 @@ export function Home() {
         </section>
       </main>
 
-      <motion.div className="books-carousel" whileTap={{ cursor: 'grabbing' }}>
-        {/* <CaretDoubleLeft size={26} color="var(--title)" /> */}
-        <motion.section className="carousel" ref={carousel}>
+      <section className="carousel-container">
+        <motion.section
+          className="carousel"
+          ref={carousel}
+          whileTap={{ cursor: 'grabbing' }}
+        >
           <motion.div
             className="images"
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.8 }}
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
           >
             {books &&
-              books.map((book, index) => <BookCard key={index} book={book} />)}
+              books.map(book => <BookCard key={book.image} book={book} />)}
           </motion.div>
         </motion.section>
-        {/* <CaretDoubleRight size={26} color="var(--title)" /> */}
-      </motion.div>
+      </section>
     </div>
   );
 }

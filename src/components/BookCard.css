@@ -11,7 +11,9 @@
   justify-content: center;
   gap: 1.4rem;
   user-select: none;
-  
+
+  padding-inline: 1.2rem;
+  margin-inline: 0.8rem;
   /* transition: 0.3s ease-in-out; */
 }
 
@@ -22,11 +24,10 @@
 
   user-select: none;
   pointer-events: none;
-
 }
 
 .card footer {
-  width: 75%;
+  width: 90%;
 
   display: flex;
   justify-content: space-between;
@@ -51,4 +52,3 @@
 .card.card-active {
   background-color: #6c63ff;
 }
-

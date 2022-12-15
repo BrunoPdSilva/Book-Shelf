@@ -1,15 +1,16 @@
 .home-page {
   height: 100%;
+  padding-bottom: 3.2rem;
 }
 
 .home-page main {
+  padding-block: 4.2rem 3.6rem;
   width: min(100vw - 20%);
   margin: auto;
-  padding-block: 4.2rem 3.6rem;
 
   display: grid;
-  grid-template-columns: minmax(30rem, 1fr) minmax(20rem, 1fr);
   grid-column-gap: 10%;
+  grid-template-columns: minmax(30rem, 1fr) minmax(20rem, 1fr);
 }
 
 .home-page main header h1 {
@@ -33,14 +34,12 @@
 
 .home-page main .search-input-group {
   width: 100%;
-
   display: flex;
 }
 
 .home-page main .search-input-group button {
   width: 4.6rem;
   height: 4.6rem;
-
   margin-right: 1.6rem;
 
   background: none;
@@ -66,51 +65,40 @@
 }
 
 .home-page .home-side-image {
+  height: 32rem;
   display: flex;
   justify-content: center;
-
-  height: 32rem;
 }
 
 .home-page .home-side-image img {
   width: 100%;
 }
 
-.home-page .books-carousel {
-  width: min(100vw - 10%);
-  margin-inline: auto;
-
+section.carousel-container {
   display: flex;
-  align-items: center;
-  margin-top: 3.2rem;
-  padding-bottom: 3.2rem;
-
+  justify-content: center;
 }
 
-.home-page .books-carousel .carousel {
+.home-page .carousel {
   width: min(100vw - 20%);
   height: 38rem;
-  margin: auto;
-  padding-inline: 2.2rem;
-  overflow: hidden;
 
+  margin: 3.2rem auto;
+  padding-inline: 2.2rem;
+
+  overflow: hidden;
 
   background-color: var(--carousel-bg);
   border-radius: 6px;
 
-  display: flex;
-  align-items: center;
-
+  cursor: grabbing;
   transition: 0.3s ease-in-out;
 }
 
-.home-page .books-carousel .carousel .images {
-  width: 100%;
+.home-page .carousel .images {
+  width: auto;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-@media (max-width: 1280px) {
+  display: flex;
+  align-items: center;
 }
