@@ -24,7 +24,6 @@
 
 .navbar .nav-links {
   display: flex;
-  justify-content: space-between;
   gap: 6.8rem;
 }
 
@@ -56,6 +55,12 @@
   transform-origin: left;
 }
 
+.navbar .action-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
 .navbar .buttons-container {
   display: flex;
   gap: 1.6rem;
@@ -76,6 +81,8 @@
 
   cursor: pointer;
   transition: 0.5s ease-in;
+  background-color: transparent;
+
 }
 
 .navbar .buttons-container button.primary-button {
@@ -116,9 +123,10 @@
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 830px) {
   .navbar .nav-links,
-  .navbar .buttons-container {
+  .navbar .buttons-container,
+  .toggleButton {
     display: none;
   }
 
@@ -154,6 +162,10 @@
     font-size: 1.8rem;
   }
 
+  .navbar .action-btn-container {
+    flex-direction: column;
+  }
+
   .navbar.active .buttons-container {
     margin-top: 3.2rem;
     display: flex;
@@ -162,6 +174,11 @@
 
   .navbar.active .buttons-container button {
     width: 100%;
+  }
+
+  .navbar.active .toggleButton {
+    margin-top: 2.2rem;
+    display: flex;
   }
 
   .navbar.active .burger-menu {

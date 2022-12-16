@@ -7,14 +7,10 @@ import { Home } from './pages/home/Home';
 import { LoginPage } from './pages/login/Login';
 import { Signup } from './pages/signup/Signup';
 
-import { ToggleTheme } from './components/ToggleTheme';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useLocalStorage(
-    'theme',
-    'theme' ? 'dark' : 'light'
-  );
+  const [theme, setTheme] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
 
   const { user, authIsReady } = useAuthContext();
 
@@ -26,8 +22,7 @@ function App() {
     <div className="App" data-theme={theme}>
       {authIsReady && (
         <BrowserRouter>
-          <Navbar user={user} />
-          <ToggleTheme toggle={toggleTheme} theme={theme} />
+          <Navbar user={user} toggle={toggleTheme} theme={theme} />
           <Routes>
             <Route
               path="/"
