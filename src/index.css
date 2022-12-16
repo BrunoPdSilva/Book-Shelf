@@ -4,9 +4,12 @@
   --title: #ffffff;
   --text: rgba(255, 255, 255, 0.5);
   --primary-color: #8078bf;
-  --disableBTN-color: #BEBADE;
+  --disableBTN-color: #bebade;
 
   --webkit-font-smoothing: antialiased;
+
+  --gradient1: linear-gradient(135deg, #8078bf 27.4%, #574cff 100%);
+  --gradient2: linear-gradient(135deg, #ededed 27.4%, #dcdafb 100%);
 
   font-size: 58%;
   font-family: 'Roboto', sans-serif;
@@ -14,19 +17,19 @@
 
 [data-theme='light'] {
   --background: #f6f6f6;
-  --carousel-bg: #D9D9D9;
+  --carousel-bg: #d9d9d9;
   --title: #453d83;
   --text: rgba(69, 61, 131, 0.8);
   --primary-color: #8078bf;
 }
 
-img {
+/* img {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-}
+} */
 
 ::-ms-reveal {
   display: none;

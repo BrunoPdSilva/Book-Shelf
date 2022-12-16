@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
 import { useAuthContext } from '../../hooks/useAuthContext';
 
-import { Eye } from 'phosphor-react';
+import { Eye, EyeSlash } from 'phosphor-react';
 
 import SideImage from '../../assets/login-image.svg';
 import './Login.css';
@@ -45,22 +45,27 @@ export function LoginPage() {
               placeholder="Senha"
               onChange={e => setPassword(e.target.value)}
             />
-            <Eye
-              size={28}
-              color={
-                showPassword
-                  ? 'var(--primary-color)'
-                  : 'var(--disableBTN-color)'
-              }
-              onClick={() => setShowPassword(!showPassword)}
-              className="show-password-button"
-            />
+            {showPassword ? (
+              <EyeSlash
+                size={28}
+                color={'var(--primary-color)'}
+                onClick={() => setShowPassword(!showPassword)}
+                className="show-password-button"
+              />
+            ) : (
+              <Eye
+                size={28}
+                color={'var(--primary-color)'}
+                onClick={() => setShowPassword(!showPassword)}
+                className="show-password-button"
+              />
+            )}
           </label>
           {error && <span className="error-message">{error}</span>}
 
           <p className="signup-message">
             Não possui uma conta?{' '}
-            <Link to="/signup" style={{ color: 'var(--primary-color)' }}>
+            <Link to="/signup" style={{ color: 'var(--primary-color)' }} className="signup">
               Cadastre-se
             </Link>
           </p>

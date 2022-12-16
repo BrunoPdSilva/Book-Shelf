@@ -33,7 +33,27 @@
   font-weight: 400;
   line-height: 1.9rem;
   color: #ffffff;
-  transition: 0.3s ease-in-out;
+
+  position: relative;
+}
+
+.navbar .nav-links li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.navbar .nav-links li:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .navbar .buttons-container {
@@ -47,29 +67,29 @@
 
   border: none;
   border-radius: 4px;
+  background-size: 300%;
+  background-position: left;
 
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 2.2rem;
 
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.navbar .buttons-container button:hover {
-  filter: brightness(0.9);
-}
-
-.navbar .buttons-container button.secondary-button {
-  background-color: #ffffff;
-  border: 1px solid #3a4f39;
-  color: #453d83;
-  font-weight: 600;
+  transition: 0.5s ease-in;
 }
 
 .navbar .buttons-container button.primary-button {
-  background-color: #8078bf;
+  background-image: var(--gradient1);
   color: #ffffff;
+}
+
+.navbar .buttons-container button.secondary-button {
+  background-image: var(--gradient2);
+  color: #453d83;
+}
+
+.navbar .buttons-container button:hover {
+  background-position: right;
 }
 
 .burger-menu {
