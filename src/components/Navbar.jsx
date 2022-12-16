@@ -19,18 +19,46 @@ export function Navbar({ user, toggle, theme }) {
       className={showMenu ? 'navbar-container active' : 'navbar-container'}
     >
       <nav className={showMenu ? 'navbar active' : 'navbar'}>
-        <img src={NavLogo} alt="Logo" className="logo-image" />
+        <motion.img
+          src={NavLogo}
+          alt="Logo"
+          className="logo-image"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.1 }}
+        />
 
         {user && (
           <ul className="nav-links">
             <Link to="/">
-              <motion.li whileHover={{ scale: 1.1 }}>Livros</motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Livros
+              </motion.li>
             </Link>
             <Link to="/">
-              <motion.li whileHover={{ scale: 1.1 }}>Contato</motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                Contato
+              </motion.li>
             </Link>
             <Link to="/">
-              <motion.li whileHover={{ scale: 1.1 }}>Sobre</motion.li>
+              <motion.li
+                whileHover={{ scale: 1.1 }}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                Sobre
+              </motion.li>
             </Link>
           </ul>
         )}
@@ -39,34 +67,49 @@ export function Navbar({ user, toggle, theme }) {
           {user ? (
             <div className="buttons-container">
               <Link to="/">
-                <button
+                <motion.button
                   className="secondary-button"
                   onClick={() => setShowMenu(false)}
+                  initial={{ y: -100 }}
+                  animate={{ y: 0 }}
+                  transition={{ delay: 0.2 }}
                 >
                   Adicionar um livro
-                </button>
+                </motion.button>
               </Link>
-              <button className="primary-button" onClick={logout}>
+              <motion.button
+                className="primary-button"
+                onClick={logout}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
                 Sair
-              </button>
+              </motion.button>
             </div>
           ) : (
             <div className="buttons-container">
               <Link to="/login">
-                <button
+                <motion.button
                   className="secondary-button"
                   onClick={() => setShowMenu(false)}
+                  initial={{ y: -100 }}
+                  animate={{ y: 0 }}
+                  transition={{ delay: 0.2 }}
                 >
                   Login
-                </button>
+                </motion.button>
               </Link>
               <Link to="/signup" style={{ color: '#FFF' }}>
-                <button
+                <motion.button
                   className="primary-button"
                   onClick={() => setShowMenu(false)}
+                  initial={{ y: -100 }}
+                  animate={{ y: 0 }}
+                  transition={{ delay: 0.3 }}
                 >
                   Cadastrar-se
-                </button>
+                </motion.button>
               </Link>
             </div>
           )}
@@ -74,8 +117,9 @@ export function Navbar({ user, toggle, theme }) {
           <motion.button
             onClick={toggle}
             className="toggleButton"
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.6 }}
             whileHover={{ rotate: 360, scale: 1.1 }}
           >
             {theme === 'light' ? (

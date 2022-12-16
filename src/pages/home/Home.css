@@ -1,6 +1,9 @@
 .home-page {
   height: 100%;
   padding-bottom: 3.2rem;
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .home-page main {
@@ -123,15 +126,6 @@ section.carousel-container {
   .home-page main header h1 {
     font-size: 3.2rem;
   }
-
-  /* .home-page main {
-    grid-template-columns: 1fr;
-    grid-row-gap: 3.6rem;
-  }
-
-.home-page main header {
-  text-align: center;
-} */
 }
 
 @media (max-width: 878px) {
