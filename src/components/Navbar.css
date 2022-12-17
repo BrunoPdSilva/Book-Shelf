@@ -1,6 +1,6 @@
 .navbar-container {
   width: 100%;
-  height: 8.6rem;
+  height: 8.4rem;
 
   background-color: #26262b;
 }
@@ -28,8 +28,8 @@
 }
 
 .navbar .nav-links li {
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: var(--sm);
+  font-weight: 500;
   line-height: 1.9rem;
   color: #ffffff;
 
@@ -67,7 +67,6 @@
 }
 
 .navbar .buttons-container button {
-  max-height: 5rem;
   padding: 1.4rem 2.6rem;
 
   border: none;
@@ -75,14 +74,12 @@
   background-size: 300%;
   background-position: left;
 
-  font-size: 1.6rem;
+  font-size: var(--sm);
   font-weight: 600;
-  line-height: 2.2rem;
 
   cursor: pointer;
   transition: 0.5s ease-in;
   background-color: transparent;
-
 }
 
 .navbar .buttons-container button.primary-button {
@@ -108,6 +105,23 @@
 
   cursor: pointer;
 }
+
+.toggleButton {
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: #26262b;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
 
 @media (max-width: 1040px) {
   .navbar .nav-links {
@@ -136,11 +150,10 @@
   }
 
   .navbar.active {
-    padding-top: 8rem;
+    padding-top: 7.6rem;
 
     flex-direction: column;
     justify-content: start;
-    align-items: center;
   }
 
   .navbar.active .logo-image {

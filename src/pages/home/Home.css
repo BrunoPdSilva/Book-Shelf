@@ -1,40 +1,42 @@
 .home-page {
   height: 100%;
-  padding-bottom: 3.2rem;
+  padding-block: 4.2rem 3.2rem;
 
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
+.home-page::-webkit-scrollbar{
+  display: none;
+}
+
 .home-page main {
-  padding-block: 4.2rem 3.6rem;
+  padding-bottom: 2rem;
   width: min(100vw - 20%);
   margin: auto;
 
   display: grid;
-  grid-column-gap: 10%;
   grid-template-columns: minmax(30rem, 1fr) minmax(20rem, 1fr);
 }
 
 .home-page main header {
-  max-width: 52rem;
-  margin: auto;
+  max-width: 46.1rem;
 }
 
 .home-page main header h1 {
   font-family: 'Montserrat';
-  font-size: 3.6rem;
+  font-size: var(--xxl);
   font-weight: 600;
-  line-height: 5.9rem;
+  line-height: 4.8rem;
   color: var(--title);
 }
 
 .home-page main header h2 {
-  padding-block: 1.8rem 7.2rem;
+  padding-block: 2.6rem 6.4rem;
 
   font-family: 'Montserrat';
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: var(--lg);
+  font-weight: 500;
   line-height: 3.2rem;
   text-align: center;
   color: var(--text);
@@ -65,21 +67,25 @@
   border-radius: 4px;
 
   font-family: 'Montserrat';
-  font-size: 2.2rem;
+  font-size: var(--base);
   font-weight: 400;
-  line-height: 3.2rem;
+  line-height: 2.7rem;
   text-align: center;
   color: var(--title);
 }
 
+.home-page main .search-input-group input::-webkit-input-placeholder {
+  color: var(--title);
+}
+
 .home-page .home-side-image {
-  height: 32rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  height: 30rem;
 }
 
 .home-page .home-side-image img {
-  width: 100%;
+  height: 100%;
 }
 
 section.carousel-container {
@@ -116,28 +122,23 @@ section.carousel-container {
   height: 2.6rem;
 }
 
-@media (max-width: 1170px) {
-  .home-page main {
-    grid-column-gap: 3%;
-  }
-}
-
-@media (max-width: 988px) {
+@media (max-width: 980px) {
   .home-page main header h1 {
-    font-size: 3.2rem;
+    font-size: var(--xl);
   }
-}
 
-@media (max-width: 878px) {
-  .home-page main header h1 {
-    font-size: 3rem;
-  }
   .home-page main header h2 {
     font-size: 2rem;
   }
 
-  .home-page main .search-input-group input {
-    font-size: 1.8rem;
+  .home-page .home-side-image img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 880px) {
+  .home-page main header h1 {
+    font-size: 2.8rem;
   }
 }
 
@@ -145,21 +146,19 @@ section.carousel-container {
   .home-page main {
     padding-bottom: 0rem;
     grid-template-columns: 1fr;
-    grid-row-gap: 3.6rem;
+    grid-row-gap: 2.2rem;
+  }
+
+  .home-page main header {
+    margin: auto;
   }
 
   .home-page main header h2 {
-    padding-bottom: 4.6rem;
+    padding-bottom: 3.6rem;
   }
 
-  .home-page .home-side-image {
-    height: auto;
-    width: 100%;
-  }
-
-  .home-side-image img {
-    max-height: 32rem;
-    width: 100%;
+  .home-page .carousel {
+    margin: 2.2rem auto;
   }
 }
 
@@ -168,7 +167,7 @@ section.carousel-container {
     text-align: center;
   }
 
-  .home-page main header h1 {
-    line-height: 4.9rem;
+  .home-page .carousel {
+    margin-block: 0;
   }
 }

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { MagnifyingGlass } from 'phosphor-react';
 import { BookCard } from '../../components/BookCard';
 
-import sideImage from '../../assets/home-side-image.svg';
+import sideImage from '../../assets/02.svg';
 import './Home.css';
 
 export function Home() {

@@ -6,13 +6,17 @@ import { List, X, Sun, Moon } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
 import NavLogo from '../assets/nav-logo.svg';
-import './ToggleTheme.css';
 import './Navbar.css';
 
 export function Navbar({ user, toggle, theme }) {
   const [showMenu, setShowMenu] = useState(false);
 
   const { logout } = useLogout();
+
+  function toggleTheme() {
+    toggle()
+    setShowMenu(false)
+  }
 
   return (
     <header
@@ -115,17 +119,16 @@ export function Navbar({ user, toggle, theme }) {
           )}
 
           <motion.button
-            onClick={toggle}
+            onClick={toggleTheme}
             className="toggleButton"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            transition={{ delay: 0.6 }}
             whileHover={{ rotate: 360, scale: 1.1 }}
           >
             {theme === 'light' ? (
-              <Moon size={36} color="yellow" />
+              <Moon size={32} color="yellow" />
             ) : (
-              <Sun size={36} color="yellow" />
+              <Sun size={32} color="yellow" />
             )}
           </motion.button>
         </section>

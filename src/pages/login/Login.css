@@ -28,10 +28,6 @@
   margin-bottom: 0;
 }
 
-.login-page form.form p.signup-message {
-  margin-top: 3.6rem;
-}
-
 .login-page form.form p.signup-message .signup {
   color: var(--title);
   position: relative;

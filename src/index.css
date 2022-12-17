@@ -17,8 +17,8 @@
   /* TYPOGRAPHY */
   --xxl: 3.6rem;
   --xl: 3.2rem;
-  --lg: 2.1rem;
-  --b: 1.8rem;
+  --lg: 2.2rem;
+  --base: 1.8rem;
   --sm: 1.6rem;
   --xs: 1.4rem;
 }
@@ -35,15 +35,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
   text-decoration: none;
   list-style: none;
 }
 
-html, body,
-#root, .App {
+html,
+body,
+#root,
+.App {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 ::-ms-reveal {

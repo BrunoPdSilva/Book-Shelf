@@ -30,42 +30,48 @@ export function LoginPage() {
           </h1>
           <p>Adoramos ter você de volta, faça login para continuar</p>
 
-          <label className="input-group">
-            <input
-              type="text"
-              placeholder="Email"
-              autoComplete="none"
-              onChange={e => setEmail(e.target.value)}
-            />
-          </label>
+          <div className="inputs-container">
+            <label className="input-group">
+              <input
+                type="text"
+                placeholder="Email"
+                autoComplete="none"
+                onChange={e => setEmail(e.target.value)}
+              />
+            </label>
 
-          <label className="input-group">
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Senha"
-              onChange={e => setPassword(e.target.value)}
-            />
-            {showPassword ? (
-              <EyeSlash
-                size={28}
-                color={'var(--primary-color)'}
-                onClick={() => setShowPassword(!showPassword)}
-                className="show-password-button"
+            <label className="input-group">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Senha"
+                onChange={e => setPassword(e.target.value)}
               />
-            ) : (
-              <Eye
-                size={28}
-                color={'var(--primary-color)'}
-                onClick={() => setShowPassword(!showPassword)}
-                className="show-password-button"
-              />
-            )}
-          </label>
-          {error && <span className="error-message">{error}</span>}
+              {showPassword ? (
+                <EyeSlash
+                  size={28}
+                  color={'var(--primary-color)'}
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="show-password-button"
+                />
+              ) : (
+                <Eye
+                  size={28}
+                  color={'var(--primary-color)'}
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="show-password-button"
+                />
+              )}
+            </label>
+            {error && <span className="error-message">{error}</span>}
+          </div>
 
           <p className="signup-message">
             Não possui uma conta?{' '}
-            <Link to="/signup" style={{ color: 'var(--primary-color)' }} className="signup">
+            <Link
+              to="/signup"
+              style={{ color: 'var(--primary-color)' }}
+              className="signup"
+            >
               Cadastre-se
             </Link>
           </p>
