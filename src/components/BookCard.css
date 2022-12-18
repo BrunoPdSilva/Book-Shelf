@@ -14,7 +14,6 @@
 
   padding-inline: 1.2rem;
   margin-inline: 0.8rem;
-  /* transition: 0.3s ease-in-out; */
 }
 
 .card img.card-image {
@@ -26,14 +25,20 @@
   pointer-events: none;
 }
 
-.card footer {
+.card .footer-disabled {
+  display: none;
+}
+
+.card .footer-active {
   width: 90%;
 
   display: flex;
   justify-content: space-between;
+
+  transition: 0.5s ease-in;
 }
 
-.card footer div {
+.card .footer-active div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +46,14 @@
   gap: 0.2rem;
 }
 
-.card footer div span {
+.card .footer-active div.bar {
+  width: 2px;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.card .footer-active div span {
   font-family: 'Montserrat';
   font-size: 1rem;
   font-weight: 600;

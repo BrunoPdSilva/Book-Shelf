@@ -17,20 +17,19 @@ export function BookCard({ book }) {
     >
       <img src={book.image} alt="Card image" className="card-image" />
 
-      {isCardActive && (
-        <footer>
+        <footer className={isCardActive ? "footer-active" : "footer-disabled"}>
           <div>
             <span>Tamanho</span>
             <BookOpen size={22} color="#FFF" />
             <span>{book.length} pag</span>
           </div>
+          <div className="bar"></div>
           <div>
             <span>Idioma</span>
             <GlobeHemisphereWest size={22} color="#FFF" />
             <span>{book.language}</span>
           </div>
         </footer>
-      )}
     </motion.div>
   );
 }

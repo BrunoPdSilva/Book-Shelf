@@ -19,6 +19,8 @@ export function Home() {
     }, 500);
   }, []);
 
+  console.log(books)
+
   return (
     <div className="home-page">
       <main>
