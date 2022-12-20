@@ -1,0 +1,98 @@
+div.book-page {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+}
+
+.book-page .banner {
+  width: 100%;
+  height: 120px;
+
+  background-image: url(../../assets/banner-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.book-page main {
+  width: calc(100vw - 20%);
+  margin: auto;
+  padding-top: 9rem;
+
+  display: flex;
+
+  position: relative;
+  z-index: 100;
+}
+
+.book-page .book-section {
+  width: 29.4rem;
+}
+
+.book-page .book-section .image-container {
+  width: 29.4rem;
+  height: 40.8rem;
+  padding: 1.6rem;
+  margin-bottom: 4.2rem;
+
+  background-color: #F6F6F6;
+  border-radius: 12px;
+
+  box-shadow: 0px 3.29213px 9.8764px rgba(0, 0, 0, 0.25);
+}
+
+.book-page .book-section .image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.book-page .book-section .buttons-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.book-page .book-section .buttons-container button {
+  height: 4.8rem;
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+
+  background-size: 300%;
+  background-position: left;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+
+  font-family: 'Montserrat';
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2.0rem;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.book-page .book-section .buttons-container button:nth-child(1) {
+  background-image: var(--gradient1);
+  color: #FFF;
+}
+
+.book-page .book-section .buttons-container button:nth-child(2) {
+  background-image: var(--gradient2);
+  color: #000;
+}
+
+.book-page .book-section .buttons-container button:hover {
+  background-position: right;
+}

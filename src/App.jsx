@@ -8,6 +8,7 @@ import { LoginPage } from './pages/login/Login';
 import { Signup } from './pages/signup/Signup';
 
 import './App.css';
+import { Book } from './pages/book/Book';
 
 function App() {
   const [theme, setTheme] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
@@ -23,7 +24,8 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           <Navbar user={user} toggle={toggleTheme} theme={theme} />
-          <Routes>
+          <Book />
+{/*           <Routes>
             <Route
               path="/"
               element={user ? <Home /> : <Navigate to="/login" />}
@@ -37,7 +39,7 @@ function App() {
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
           </Routes>
-        </BrowserRouter>
+ */}        </BrowserRouter>
       )}
     </div>
   );

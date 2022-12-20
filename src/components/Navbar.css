@@ -1,6 +1,6 @@
 .navbar-container {
   width: 100%;
-  height: 8.4rem;
+  height: 7.2rem;
 
   background-color: #26262b;
 }
@@ -195,7 +195,7 @@
   }
 
   .navbar.active .burger-menu {
-    top: 5%;
+    top: 2.3%;
   }
 
   .burger-menu {

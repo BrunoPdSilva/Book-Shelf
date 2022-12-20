@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 import { MagnifyingGlass } from 'phosphor-react';
 import { BookCard } from '../../components/BookCard';
 
-import sideImage from '../../assets/02.svg';
+import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';
 
 export function Home() {
   const { documents: books } = useCollection('books');
+
+  const [searchTerm, setSearchTerm] = useState('');
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -17,9 +19,7 @@ export function Home() {
     setTimeout(() => {
       setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
     }, 500);
-  }, []);
-
-  console.log(books)
+  }, [books]);
 
   return (
     <div className="home-page">
@@ -40,6 +40,7 @@ export function Home() {
               type="text"
               placeholder="Procurar um livro"
               autoComplete="none"
+              onChange={e => setSearchTerm(e.target.value)}
             />
           </div>
         </motion.header>
