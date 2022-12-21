@@ -2,14 +2,14 @@
   width: 100%;
   height: 100%;
 
-  position: relative;
-
   padding-bottom: 3.6rem;
+
+  position: relative;
 }
 
 .book-page .banner {
   width: 100%;
-  height: 120px;
+  height: 10rem;
 
   background-image: url(../../assets/banner-image.png);
   background-repeat: no-repeat;
@@ -23,24 +23,23 @@
 
 .book-page main {
   width: calc(100vw - 20%);
+  padding-top: 6rem;
   margin: auto;
-  padding-top: 9rem;
 
-  display: flex;
-  justify-content: space-between;
-
+  display: grid;
+  grid-template-columns: minmax(20rem, 29.4rem) minmax(20rem, 1fr);
+  grid-column-gap: 5%;
   position: relative;
   z-index: 100;
 }
 
 /* IMAGE SECTION */
 .book-page .book-img-section {
-  width: 29.4rem;
+  max-width: 29.4rem;
 }
 
 .book-page .book-img-section .image-card {
-  width: 29.4rem;
-  height: 40.8rem;
+  width: 100%;
   padding: 1.6rem;
   margin-bottom: 4.2rem;
 

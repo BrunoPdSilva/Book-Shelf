@@ -1,18 +1,16 @@
 /* DETAILS SECTION */
 .book-page .book-details-container {
-  width: 82rem;
-
-  padding-top: 4.4rem;
+  padding-top: 6rem;
 }
 
-.book-page .book-details-container h1 {
+.book-page .book-details-container .sumario h1 {
   font-family: 'Montserrat';
   font-size: var(--xl);
   font-weight: 600;
   line-height: 3.9rem;
   color: var(--title);
 }
-.book-page .book-details-container h2 {
+.book-page .book-details-container .sumario h2 {
   padding-block: 0.6rem 2.4rem;
 
   font-family: 'Montserrat';
@@ -22,19 +20,44 @@
   line-height: 2.9rem;
   color: var(--title);
 }
-.book-page .book-details-container p {
+.book-page .book-details-container .sumario p {
   font-family: 'Montserrat';
   font-size: var(--sm);
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 2.4rem;
   color: var(--text);
+}
+
+.book-page .book-details-container .sumario button {
+  width: 6rem;
+  height: 3rem;
+  margin: auto;
+
+  margin-block: 1.8rem 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+
+  background-size: 300%;
+  background-position: left;
+  background-color: transparent;
+  background-image: var(--gradient1);
+  transition: 0.5s ease-in;
+  cursor: pointer;
+}
+
+.book-page .book-details-container .sumario button:hover {
+  background-position: right;
 }
 
 .book-page .book-details-container .book-info {
   width: 100%;
   height: 11rem;
 
-  margin-top: 4.2rem;
   padding-inline: 8rem;
 
   display: flex;
@@ -47,6 +70,9 @@
 .book-page .book-details-container .book-categories {
   width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1.2rem;
+
+  margin-bottom: 2rem;
 }
