@@ -1,8 +1,10 @@
-div.book-page {
+.book-page {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   position: relative;
+
+  padding-bottom: 3.6rem;
 }
 
 .book-page .banner {
@@ -31,28 +33,30 @@ div.book-page {
   z-index: 100;
 }
 
-.book-page .book-section {
+/* IMAGE SECTION */
+.book-page .book-img-section {
   width: 29.4rem;
 }
 
-.book-page .book-section .image-container {
+.book-page .book-img-section .image-card {
   width: 29.4rem;
   height: 40.8rem;
   padding: 1.6rem;
   margin-bottom: 4.2rem;
 
-  background-color: #f6f6f6;
+  box-shadow: 0px 3.29213px 9.8764px rgba(0, 0, 0, 0.25);
+  background-color: var(--book-bg);
   border-radius: 12px;
 
-  box-shadow: 0px 3.29213px 9.8764px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease-in;
 }
 
-.book-page .book-section .image-container img {
+.book-page .book-img-section .image-card img {
   width: 100%;
   height: 100%;
 }
 
-.book-page .book-section .buttons-container {
+.book-page .book-img-section .buttons-container {
   width: 100%;
 
   display: flex;
@@ -60,7 +64,7 @@ div.book-page {
   gap: 1.6rem;
 }
 
-.book-page .book-section .buttons-container button {
+.book-page .book-img-section .buttons-container button {
   height: 4.8rem;
 
   border: none;
@@ -77,59 +81,23 @@ div.book-page {
   gap: 1.2rem;
 
   font-family: 'Montserrat';
-  font-size: 1.6rem;
+  font-size: var(--sm);
   font-weight: bold;
   line-height: 2rem;
   cursor: pointer;
   transition: 0.5s ease-in;
 }
 
-.book-page .book-section .buttons-container button:nth-child(1) {
+.book-page .book-img-section .buttons-container button:nth-child(1) {
   background-image: var(--gradient1);
   color: #fff;
 }
 
-.book-page .book-section .buttons-container button:nth-child(2) {
+.book-page .book-img-section .buttons-container button:nth-child(2) {
   background-image: var(--gradient2);
   color: #000;
 }
 
-.book-page .book-section .buttons-container button:hover {
+.book-page .book-img-section .buttons-container button:hover {
   background-position: right;
-}
-
-.book-page .book-details-container {
-  width: 82rem;
-
-  padding-top: 4.4rem;
-}
-
-.book-page .book-details-container h1 {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-
-  color: var(--title);
-}
-.book-page .book-details-container h2 {
-  padding-block: 0.6rem 2.4rem;
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-
-  color: var(--title);
-
-}
-.book-page .book-details-container p {
-  font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-
-color: var(--text);
 }

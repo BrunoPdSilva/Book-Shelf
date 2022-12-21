@@ -1,0 +1,21 @@
+.book-page .book-details-container .book-info .info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.book-page .book-details-container .book-info .info-container .title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--title);
+}
+
+.book-page .book-details-container .book-info .info-container .data {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: var(--title);
+}
