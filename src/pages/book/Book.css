@@ -1,6 +1,6 @@
 .book-page {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 
   padding-bottom: 3.6rem;
 
@@ -33,7 +33,6 @@
   z-index: 100;
 }
 
-/* IMAGE SECTION */
 .book-page .book-img-section {
   max-width: 29.4rem;
 }
@@ -43,7 +42,7 @@
   padding: 1.6rem;
   margin-bottom: 4.2rem;
 
-  box-shadow: 0px 3.29213px 9.8764px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3.3px 9.88px rgba(0, 0, 0, 0.25);
   background-color: var(--book-bg);
   border-radius: 12px;
 
@@ -53,6 +52,7 @@
 .book-page .book-img-section .image-card img {
   width: 100%;
   height: 100%;
+  border-radius: 6px;
 }
 
 .book-page .book-img-section .buttons-container {
@@ -63,40 +63,32 @@
   gap: 1.6rem;
 }
 
-.book-page .book-img-section .buttons-container button {
-  height: 4.8rem;
-
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-
-  background-size: 300%;
-  background-position: left;
-  background-color: transparent;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-
-  font-family: 'Montserrat';
-  font-size: var(--sm);
-  font-weight: bold;
-  line-height: 2rem;
-  cursor: pointer;
-  transition: 0.5s ease-in;
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  .book-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.book-page .book-img-section .buttons-container button:nth-child(1) {
-  background-image: var(--gradient1);
-  color: #fff;
+@media (max-width: 830px) {
+  .book-page .book-details-container .book-info {
+    padding-inline: 0;
+  }
 }
 
-.book-page .book-img-section .buttons-container button:nth-child(2) {
-  background-image: var(--gradient2);
-  color: #000;
-}
+@media (max-width: 500px) {
+  .book-page {
+    padding-bottom: 6.6rem;
+  }
 
-.book-page .book-img-section .buttons-container button:hover {
-  background-position: right;
+  .book-page .book-details-container .book-info {
+    padding-top: 1.6rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 1.6rem;
+  }
 }

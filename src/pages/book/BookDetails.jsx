@@ -6,17 +6,15 @@ import { BookCategory } from './BookCategory';
 
 import './BookDetails.css';
 
-const categories = ['Autoajuda', 'Humor', 'Aventura'];
-
-export function BookDetails({ title, author, text }) {
+export function BookDetails({ data }) {
   const [showMoreText, setShowMoreText] = useState(false);
 
   return (
     <>
       <div className="sumario">
-        <h1>{title}</h1>
-        <h2>{author}</h2>
-        <p>{showMoreText ? text : text.substr(0, 880)}</p>
+        <h1>{data.title}</h1>
+        <h2>{data.author}</h2>
+        <p>{showMoreText ? data.text : data.text.substr(0, 840)}</p>
         <button onClick={() => setShowMoreText(!showMoreText)}>
           {showMoreText ? (
             <CaretCircleUp size={22} color="#FFFFFF" />
@@ -27,8 +25,8 @@ export function BookDetails({ title, author, text }) {
       </div>
 
       <div className="book-categories">
-        {categories.map(category => (
-          <BookCategory type={category} />
+        {data.categories.map(category => (
+          <BookCategory key={category} type={category} />
         ))}
       </div>
 

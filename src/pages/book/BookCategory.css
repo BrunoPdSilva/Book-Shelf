@@ -1,3 +1,13 @@
+.book-page .book-details-container .book-categories {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+
+  margin-bottom: 2rem;
+}
+
 .book-page .book-details-container .BookCategory {
   height: 4.2rem;
   padding: 0.8rem 1.6rem;

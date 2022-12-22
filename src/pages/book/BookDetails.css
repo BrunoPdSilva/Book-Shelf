@@ -53,26 +53,3 @@
 .book-page .book-details-container .sumario button:hover {
   background-position: right;
 }
-
-.book-page .book-details-container .book-info {
-  width: 100%;
-  height: 11rem;
-
-  padding-inline: 8rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  border-top: 1px solid var(--title);
-}
-
-.book-page .book-details-container .book-categories {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-
-  margin-bottom: 2rem;
-}

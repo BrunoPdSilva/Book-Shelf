@@ -1,5 +1,7 @@
 import { DownloadSimple, ShoppingCart } from 'phosphor-react';
 
+import './BookButton.css';
+
 export function BookButton({ type }) {
   return (
     <>
