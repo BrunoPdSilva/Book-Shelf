@@ -19,7 +19,7 @@ export function useCollection(collec, _query) {
       let result = [];
 
       snapshot.docs.forEach(doc => {
-        result.push({ ...doc.data() });
+        result.push({ ...doc.data(), id: doc.id });
       });
 
       setDocuments(result);

@@ -24,8 +24,8 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           <Navbar user={user} toggle={toggleTheme} theme={theme} />
-          <Book />
-{/*           <Routes>
+          {/* <Book /> */}
+          <Routes>
             <Route
               path="/"
               element={user ? <Home /> : <Navigate to="/login" />}
@@ -38,8 +38,12 @@ function App() {
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
+            <Route
+              path="/books/:id"
+              element={user ? <Book /> : <Navigate to="/login" />}
+            />
           </Routes>
- */}        </BrowserRouter>
+        </BrowserRouter>
       )}
     </div>
   );
