@@ -4,16 +4,18 @@
   --webkit-font-smoothing: antialiased;
 
   /* COLORS */
-  --background: #121212;
-  --carousel-bg: #26262b;
-  --book-bg: #26262B;
-  --title: #ffffff;
-  --text: rgba(255, 255, 255, 0.5);
   --primary-color: #8078bf;
-  --disableBTN-color: #bebade;
 
   --gradient1: linear-gradient(135deg, #8078bf 27.4%, #574cff 100%);
   --gradient2: linear-gradient(135deg, #ededed 27.4%, #dcdafb 100%);
+
+  --page-bg: #121212;
+  --carousel-bg: #26262b;
+  --categorie-bg: #26262b;
+  --book-card-bg: #26262b;
+
+  --title: #ffffff;
+  --text: rgba(255, 255, 255, 0.5);
 
   /* TYPOGRAPHY */
   --xxl: 3.6rem;
@@ -25,12 +27,13 @@
 }
 
 [data-theme='light'] {
-  --background: #f6f6f6;
+  --page-bg: #f6f6f6;
   --carousel-bg: #d9d9d9;
-  --book-bg: #F6F6F6;
-  --title: #453d83;
-  --text: rgba(69, 61, 131, 0.8);
-  --primary-color: #8078bf;
+  --categorie-bg: #ffffff;
+  --book-card-bg: #f6f6f6;
+
+  --title: hsl(247, 36%, 38%, 100%);
+  --text: hsl(247, 36%, 38%, 80%);
 }
 
 * {

@@ -2,16 +2,19 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import useLocalStorage from 'use-local-storage';
 
-import { Navbar } from './components/Navbar';
-import { Home } from './pages/home/Home';
 import { LoginPage } from './pages/login/Login';
+import { Navbar } from './components/Navbar';
 import { Signup } from './pages/signup/Signup';
-
-import './App.css';
+import { Home } from './pages/home/Home';
 import { Book } from './pages/book/Book';
 
+import './App.css';
+
 function App() {
-  const [theme, setTheme] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
+  const [theme, setTheme] = useLocalStorage(
+    'theme',
+    'theme' ? 'dark' : 'light'
+  );
 
   const { user, authIsReady } = useAuthContext();
 
@@ -24,7 +27,6 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           <Navbar user={user} toggle={toggleTheme} theme={theme} />
-          {/* <Book /> */}
           <Routes>
             <Route
               path="/"

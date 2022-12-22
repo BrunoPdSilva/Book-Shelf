@@ -1,13 +1,13 @@
 .App {
-  transition: 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
 .App[data-theme='light'] {
-  background-color: var(--background);
+  background-color: var(--page-bg);
 }
 
 .App[data-theme='dark'] {
-  background-color: var(--background);
+  background-color: var(--page-bg);
 }
 
 /* LOGIN FORM & SIGN UP FORM */

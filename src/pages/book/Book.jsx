@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom';
 import { useFetchDoc } from '../../hooks/useFetchDoc';
+import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import { BookDetails } from './BookDetails';
 import { BookButton } from './BookButton';
@@ -20,25 +21,39 @@ export function Book() {
 
           <main>
             <section className="book-img-section">
-              <div className="image-card">
+              <motion.div
+                className="image-card"
+                animate={{ x: 0 }}
+                initial={{ x: -460 }}
+              >
                 <img src={document.image} alt="Capa do Livro" />
-              </div>
+              </motion.div>
 
-              <div className="buttons-container">
+              <motion.div
+                className="buttons-container"
+                animate={{ x: 0 }}
+                initial={{ x: -460 }}
+                transition={{ delay: 0.3, ease: 'linear' }}
+              >
                 <a href={document.buy} target="_blank">
                   <BookButton type="cart" />
                 </a>
                 <BookButton type="download" />
-              </div>
+              </motion.div>
             </section>
 
-            <section className="book-details-container">
+            <motion.section
+              className="book-details-container"
+              animate={{ x: 0 }}
+              initial={{ x: 1200 }}
+              transition={{ delay: 0.3, ease: 'linear' }}
+            >
               <BookDetails document={document} />
-            </section>
+            </motion.section>
           </main>
         </>
       ) : (
-        <h2>Loading</h2>
+        ''
       )}{' '}
     </div>
   );
