@@ -32,19 +32,19 @@ export function BookDetails({ document }) {
 
       <div className="book-info">
         <BookInfo title="Número de páginas" data={`${document.length} páginas`}>
-          <Scroll size={24} color="var(--title)" />
+          <Scroll size={24} color="var(--text)" />
         </BookInfo>
 
         <BookInfo title="Idioma" data={document.language}>
-          <GlobeHemisphereWest size={24} color="var(--title)" />
+          <GlobeHemisphereWest size={24} color="var(--text)" />
         </BookInfo>
 
         <BookInfo title="Editora" data={document.editor}>
-          <Buildings size={24} color="var(--title)" />
+          <Buildings size={24} color="var(--text)" />
         </BookInfo>
 
         <BookInfo title="Data de publicação" data={document.publishDate}>
-          <Calendar size={24} color="var(--title)" />
+          <Calendar size={24} color="var(--text)" />
         </BookInfo>
       </div>
     </>

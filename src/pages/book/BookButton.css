@@ -23,12 +23,12 @@
   transition: 0.5s ease-in;
 }
 
-.book-page .book-img-section .buttons-container button:nth-child(1) {
+.book-page .book-img-section .buttons-container a:nth-child(1) button {
   background-image: var(--gradient1);
   color: #fff;
 }
 
-.book-page .book-img-section .buttons-container button:nth-child(2) {
+.book-page .book-img-section .buttons-container a:nth-child(2) button {
   background-image: var(--gradient2);
   color: #000;
 }

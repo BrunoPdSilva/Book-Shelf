@@ -11,8 +11,6 @@ export function Book() {
   const { id } = useParams();
   const { document } = useFetchDoc(id);
 
-  console.log(document);
-
   return (
     <div className="book-page">
       {document ? (
@@ -38,7 +36,9 @@ export function Book() {
                 <a href={document.buy} target="_blank">
                   <BookButton type="cart" />
                 </a>
-                <BookButton type="download" />
+                <a href={document.download} target="_blank">
+                  <BookButton type="download" />
+                </a>
               </motion.div>
             </section>
 

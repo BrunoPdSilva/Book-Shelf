@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
 
-  border-top: 1px solid var(--title);
+  border-top: 1px solid var(--text);
 }
 
 .book-page .book-details-container .book-info .info-container {
@@ -22,7 +22,7 @@
 
 .book-page .book-details-container .book-info .info-container .title {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5rem;
   color: var(--title);
 }
@@ -31,5 +31,5 @@
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.5rem;
-  color: var(--title);
+  color: var(--text);
 }
