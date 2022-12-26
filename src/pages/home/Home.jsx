@@ -63,6 +63,7 @@ export function Home() {
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
+        
         <motion.section
           className="carousel"
           ref={carousel}

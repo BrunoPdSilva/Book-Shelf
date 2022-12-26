@@ -104,6 +104,7 @@ section.carousel-container {
 
   background-color: var(--carousel-bg);
   border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) -60px 0px 36px -28px inset, rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   cursor: grabbing;
   transition: 0.3s ease-in-out;
