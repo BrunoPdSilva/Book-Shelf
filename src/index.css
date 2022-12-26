@@ -9,13 +9,13 @@
   --gradient1: linear-gradient(135deg, #8078bf 27.4%, #574cff 100%);
   --gradient2: linear-gradient(135deg, #ededed 27.4%, #dcdafb 100%);
 
-  --page-bg: #121212;
-  --carousel-bg: #26262b;
-  --categorie-bg: #26262b;
-  --book-card-bg: #26262b;
+  --page-bg: #f6f6f6;
+  --carousel-bg: #d9d9d9;
+  --categorie-bg: #ffffff;
+  --book-card-bg: #f6f6f6;
 
-  --title: #ffffff;
-  --text: rgba(255, 255, 255, 0.5);
+  --title: hsl(247, 36%, 38%, 100%);
+  --text: hsl(247, 36%, 38%, 80%);
 
   /* TYPOGRAPHY */
   --xxl: 3.6rem;
@@ -26,14 +26,14 @@
   --xs: 1.4rem;
 }
 
-[data-theme='light'] {
-  --page-bg: #f6f6f6;
-  --carousel-bg: #d9d9d9;
-  --categorie-bg: #ffffff;
-  --book-card-bg: #f6f6f6;
+[data-theme='dark'] {
+  --page-bg: #121212;
+  --carousel-bg: #26262b;
+  --categorie-bg: #26262b;
+  --book-card-bg: #26262b;
 
-  --title: hsl(247, 36%, 38%, 100%);
-  --text: hsl(247, 36%, 38%, 80%);
+  --title: #ffffff;
+  --text: rgba(255, 255, 255, 0.5);
 }
 
 * {

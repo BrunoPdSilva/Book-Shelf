@@ -42,40 +42,38 @@
   color: var(--text);
 }
 
-.home-page main .search-input-group {
+.home-page main .explore-btn button {
   width: 100%;
-  display: flex;
-}
-
-.home-page main .search-input-group button {
-  width: 4.6rem;
   height: 4.6rem;
-  margin-right: 1.6rem;
 
-  background: none;
-  border: 1px solid var(--title);
-  border-radius: 4px;
-  cursor: pointer;
-}
+  background-image: var(--gradient1);
+  background-size: 300%;
+  background-position: left;
 
-.home-page main .search-input-group input {
-  width: 100%;
+  border: none;
+  border-radius: 6px;
 
-  background: none;
-  outline: none;
-  border: 1px solid var(--title);
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
 
   font-family: 'Montserrat';
-  font-size: var(--base);
+  font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.7rem;
-  text-align: center;
-  color: var(--title);
+  color: #FFFFFF;
+
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+.home-page main .explore-btn {
+  width: 100%;
 }
 
-.home-page main .search-input-group input::-webkit-input-placeholder {
-  color: var(--title);
+.home-page main .explore-btn button:hover {
+  background-position: right;
+
 }
 
 .home-page .home-side-image {

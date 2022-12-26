@@ -1,4 +1,4 @@
-import { DownloadSimple, ShoppingCart } from 'phosphor-react';
+import { DownloadSimple, ShoppingCart, BookBookmark } from 'phosphor-react';
 
 import './BookButton.css';
 
@@ -7,8 +7,8 @@ export function BookButton({ type }) {
     <>
       {type === 'download' ? (
         <button>
-          <DownloadSimple size={22} color="#000" weight="bold" />
-          Download
+          <BookBookmark size={22} color="#000" weight="bold" />
+          Ler livro
         </button>
       ) : (
         <button>

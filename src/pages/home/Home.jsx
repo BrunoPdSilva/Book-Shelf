@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useCollection } from '../../hooks/useCollection';
 import { motion } from 'framer-motion';
 
-import { MagnifyingGlass } from 'phosphor-react';
+import { Books } from 'phosphor-react';
 import { BookCard } from '../../components/BookCard';
+import { Link } from 'react-router-dom';
 
 import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';
@@ -28,21 +29,12 @@ export function Home() {
           <h1>Encontre seus livros favoritos em um só lugar</h1>
           <h2>Aqui você encontra informações sobre todos os seus livros</h2>
 
-          <div className="search-input-group">
+          <Link to="/working" className="explore-btn">
             <button>
-              <MagnifyingGlass
-                size={26}
-                color="var(--title)"
-                className="icon"
-              />
+              <Books size={22} weight="duotone" color='#FFF'/>
+              Explorar livros
             </button>
-            <input
-              type="text"
-              placeholder="Procurar um livro"
-              autoComplete="none"
-              onChange={e => setSearchTerm(e.target.value)}
-            />
-          </div>
+          </Link>
         </motion.header>
         <motion.section
           className="home-side-image"
@@ -63,7 +55,6 @@ export function Home() {
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
-        
         <motion.section
           className="carousel"
           ref={carousel}

@@ -42,7 +42,7 @@ export function Navbar({ user, toggle, theme }) {
 
         {user && (
           <ul className="nav-links">
-            <Link to="/">
+            <Link to="/working">
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
@@ -53,7 +53,7 @@ export function Navbar({ user, toggle, theme }) {
                 Livros
               </motion.li>
             </Link>
-            <Link to="/">
+            <Link to="/working">
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
@@ -64,7 +64,7 @@ export function Navbar({ user, toggle, theme }) {
                 Contato
               </motion.li>
             </Link>
-            <Link to="/">
+            <Link to="/working">
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
@@ -81,7 +81,7 @@ export function Navbar({ user, toggle, theme }) {
         <section className="action-btn-container">
           {user ? (
             <div className="buttons-container">
-              <Link to="/">
+              <Link to="/working">
                 <motion.button
                   className="secondary-button"
                   onClick={() => setShowMenu(false)}
