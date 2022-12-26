@@ -28,6 +28,8 @@ export function Home() {
           <h1>Encontre seus livros favoritos em um só lugar</h1>
           <h2>Aqui você encontra informações sobre todos os seus livros</h2>
 
+          <h1>Teste</h1>
+
           <div className="search-input-group">
             <button>
               <MagnifyingGlass
