@@ -1,3 +1,4 @@
+import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -8,9 +9,10 @@ import { motion } from 'framer-motion';
 import NavLogo from '../assets/nav-logo.svg';
 import './Navbar.css';
 
-export function Navbar({ user, toggle, theme }) {
+export function Navbar({ toggle, theme }) {
   const [showMenu, setShowMenu] = useState(false);
 
+  const { user, uid } = useAuthContext();
   const { logout } = useLogout();
 
   function toggleTheme() {
@@ -19,7 +21,7 @@ export function Navbar({ user, toggle, theme }) {
   }
 
   function handleLogout() {
-    setShowMenu(false)
+    setShowMenu(false);
     logout();
   }
 
@@ -81,17 +83,21 @@ export function Navbar({ user, toggle, theme }) {
         <section className="action-btn-container">
           {user ? (
             <div className="buttons-container">
-              <Link to="/working">
-                <motion.button
-                  className="secondary-button"
-                  onClick={() => setShowMenu(false)}
-                  initial={{ y: -100 }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Adicionar um livro
-                </motion.button>
-              </Link>
+              {user?.uid === uid ? (
+                <Link to="/working">
+                  <motion.button
+                    className="secondary-button"
+                    onClick={() => setShowMenu(false)}
+                    initial={{ y: -100 }}
+                    animate={{ y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    Adicionar um livro
+                  </motion.button>
+                </Link>
+              ) : (
+                ''
+              )}
               <motion.button
                 className="primary-button"
                 onClick={handleLogout}

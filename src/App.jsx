@@ -17,7 +17,7 @@ function App() {
     'theme' ? 'dark' : 'light'
   );
 
-  const { user, authIsReady } = useAuthContext();
+  const { user, authIsReady, uid } = useAuthContext();
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -45,7 +45,11 @@ function App() {
               path="/books/:id"
               element={user ? <Book /> : <Navigate to="/login" />}
             />
-            <Route path='/working' element={<Working />}/>
+            <Route
+              path="/add"
+              element={user?.uid === uid ? <Working /> : <Navigate to="/" />}
+            />
+            <Route path="/working" element={<Working />} />
           </Routes>
         </BrowserRouter>
       )}

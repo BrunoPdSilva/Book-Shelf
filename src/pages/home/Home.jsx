@@ -12,7 +12,6 @@ import './Home.css';
 export function Home() {
   const { documents: books } = useCollection('books');
 
-  const [searchTerm, setSearchTerm] = useState('');
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 

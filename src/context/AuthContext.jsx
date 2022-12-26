@@ -24,6 +24,8 @@ export function AuthContextProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, initialState);
   const [userName, setUserName] = useLocalStorage('userName', '');
 
+  const uid = 'IXfpB9vObabSZn3BFRFArusqD3w1';
+
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, user => {
       dispatch({ type: 'AUTH_IS_READY', payload: user });
@@ -31,10 +33,8 @@ export function AuthContextProvider({ children }) {
     });
   }, []);
 
-  // console.log('AuthContext state:', state);
-
   return (
-    <AuthContext.Provider value={{ ...state, dispatch, userName, setUserName }}>
+    <AuthContext.Provider value={{ ...state, dispatch, userName, setUserName, uid }}>
       {children}
     </AuthContext.Provider>
   );
