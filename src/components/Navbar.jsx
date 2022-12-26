@@ -14,8 +14,13 @@ export function Navbar({ user, toggle, theme }) {
   const { logout } = useLogout();
 
   function toggleTheme() {
-    toggle()
+    toggle();
+    setShowMenu(false);
+  }
+
+  function handleLogout() {
     setShowMenu(false)
+    logout();
   }
 
   return (
@@ -23,19 +28,23 @@ export function Navbar({ user, toggle, theme }) {
       className={showMenu ? 'navbar-container active' : 'navbar-container'}
     >
       <nav className={showMenu ? 'navbar active' : 'navbar'}>
-        <motion.img
-          src={NavLogo}
-          alt="Logo"
-          className="logo-image"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.1 }}
-        />
+        <Link to="/">
+          <motion.img
+            src={NavLogo}
+            alt="Logo"
+            className="logo-image"
+            onClick={() => setShowMenu(false)}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.1 }}
+          />
+        </Link>
 
         {user && (
           <ul className="nav-links">
             <Link to="/">
               <motion.li
+                onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -46,6 +55,7 @@ export function Navbar({ user, toggle, theme }) {
             </Link>
             <Link to="/">
               <motion.li
+                onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -56,6 +66,7 @@ export function Navbar({ user, toggle, theme }) {
             </Link>
             <Link to="/">
               <motion.li
+                onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -83,7 +94,7 @@ export function Navbar({ user, toggle, theme }) {
               </Link>
               <motion.button
                 className="primary-button"
-                onClick={logout}
+                onClick={handleLogout}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ delay: 0.3 }}

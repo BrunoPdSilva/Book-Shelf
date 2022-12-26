@@ -67,11 +67,7 @@ export function LoginPage() {
 
           <p className="signup-message">
             Não possui uma conta?{' '}
-            <Link
-              to="/signup"
-              style={{ color: 'var(--primary-color)' }}
-              className="signup"
-            >
+            <Link to="/signup" className="signup">
               Cadastre-se
             </Link>
           </p>

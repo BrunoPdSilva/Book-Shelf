@@ -160,6 +160,10 @@ section.carousel-container {
   .home-page .carousel {
     margin: 2.2rem auto;
   }
+
+  .home-page .home-side-image {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 400px) {

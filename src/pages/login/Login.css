@@ -53,6 +53,11 @@
 }
 
 @media (max-width: 850px) {
+  .login-page {
+    display: block;
+    margin-top: 12rem;
+  }
+
   .login-page main {
     display: flex;
     justify-content: center;
@@ -61,4 +66,8 @@
   .login-page main .side-image {
     display: none;
   }
+
+.login-page form.form p.signup-message .signup {
+  text-decoration: underline;
+}
 }
