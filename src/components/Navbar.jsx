@@ -84,7 +84,7 @@ export function Navbar({ toggle, theme }) {
           {user ? (
             <div className="buttons-container">
               {user?.uid === uid ? (
-                <Link to="/working">
+                <Link to="/add">
                   <motion.button
                     className="secondary-button"
                     onClick={() => setShowMenu(false)}

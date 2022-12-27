@@ -8,6 +8,7 @@ import { Navbar } from './components/Navbar';
 import { Signup } from './pages/signup/Signup';
 import { Home } from './pages/home/Home';
 import { Book } from './pages/book/Book';
+import { AddBook } from './pages/addBook/AddBook';
 
 import './App.css';
 
@@ -47,7 +48,7 @@ function App() {
             />
             <Route
               path="/add"
-              element={user?.uid === uid ? <Working /> : <Navigate to="/" />}
+              element={user?.uid === uid ? <AddBook /> : <Navigate to="/" />}
             />
             <Route path="/working" element={<Working />} />
           </Routes>

@@ -13,6 +13,7 @@
   --carousel-bg: #d9d9d9;
   --categorie-bg: #ffffff;
   --book-card-bg: #f6f6f6;
+  --addBook-bg: #f6f6f6;
 
   --title: hsl(247, 36%, 38%, 100%);
   --text: hsl(247, 36%, 38%, 80%);
@@ -31,6 +32,7 @@
   --carousel-bg: #26262b;
   --categorie-bg: #26262b;
   --book-card-bg: #26262b;
+  --addBook-bg: #121212;
 
   --title: #ffffff;
   --text: rgba(255, 255, 255, 0.5);
