@@ -1,9 +1,8 @@
 import { useReducer } from 'react';
-
 import { collection, addDoc } from 'firebase/firestore';
-import { dataBase } from '../../firebase/config';
+import { dataBase } from '../../../firebase/config';
 
-import { Input } from '../../components/Input';
+import { Input } from './Input';
 
 import './AddBook.css';
 
@@ -43,7 +42,7 @@ function reducer(state, action) {
     case 'Sinopse':
       return { ...state, sinopse: action.payload };
     case 'clean':
-      return initialState
+      return initialState;
     default:
       return state;
   }
@@ -55,33 +54,30 @@ export function AddBook() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(state);
     const collectionRef = collection(dataBase, 'books');
-
     await addDoc(collectionRef, state);
 
     dispatch({ type: 'clean' });
   }
 
   return (
-    <div className="addBook-Page">
-      <div className="addForm-wrapper">
-        <header>Adicionar livro</header>
-        <form onSubmit={handleSubmit}>
-          <Input title="Título" dispatch={dispatch} value={state.title}/>
-          <Input title="Autor" dispatch={dispatch}  value={state.author} />
-          <Input title="Qnt. Páginas" dispatch={dispatch}  value={state.length} />
-          <Input title="Categorias" dispatch={dispatch}  value={state.categories} />
-          <Input title="Editora" dispatch={dispatch}  value={state.editor} />
-          <Input title="Idioma" dispatch={dispatch}  value={state.language} />
-          <Input title="URL da imagem" dispatch={dispatch}  value={state.image} />
-          <Input title="URL da compra" dispatch={dispatch}  value={state.buy} />
-          <Input title="URL do livro" dispatch={dispatch}  value={state.download}/>
-          <Input title="Sinopse" dispatch={dispatch}  value={state.sinopse} />
+    <div className="add-form-wrapper">
+      <h2>Adicionar livro</h2>
 
-          <button type="submit">Adicionar</button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <Input title="Título" dispatch={dispatch} value={state.title} />
+        <Input title="Autor" dispatch={dispatch} value={state.author} />
+        <Input title="Qnt. Páginas" dispatch={dispatch} value={state.length} />
+        <Input title="Categorias" dispatch={dispatch} value={state.categories} />
+        <Input title="Editora" dispatch={dispatch} value={state.editor} />
+        <Input title="Idioma" dispatch={dispatch} value={state.language} />
+        <Input title="URL da imagem" dispatch={dispatch} value={state.image} />
+        <Input title="URL da compra" dispatch={dispatch} value={state.buy} />
+        <Input title="URL do livro" dispatch={dispatch} value={state.download} />
+        <Input title="Sinopse" dispatch={dispatch} value={state.sinopse} />
+
+        <button type="submit">Adicionar</button>
+      </form>
     </div>
   );
 }

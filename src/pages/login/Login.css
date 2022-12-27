@@ -67,7 +67,7 @@
     display: none;
   }
 
-.login-page form.form p.signup-message .signup {
-  text-decoration: underline;
-}
+  .login-page form.form p.signup-message .signup {
+    text-decoration: underline;
+  }
 }

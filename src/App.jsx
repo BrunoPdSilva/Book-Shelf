@@ -2,13 +2,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import useLocalStorage from 'use-local-storage';
 
+import { Dashboard } from './pages/dashboard/Dashboard';
 import { LoginPage } from './pages/login/Login';
 import { Working } from './pages/working/Working';
 import { Navbar } from './components/Navbar';
 import { Signup } from './pages/signup/Signup';
 import { Home } from './pages/home/Home';
 import { Book } from './pages/book/Book';
-import { AddBook } from './pages/addBook/AddBook';
 
 import './App.css';
 
@@ -47,8 +47,8 @@ function App() {
               element={user ? <Book /> : <Navigate to="/login" />}
             />
             <Route
-              path="/add"
-              element={user?.uid === uid ? <AddBook /> : <Navigate to="/" />}
+              path="/dashboard"
+              element={user?.uid === uid ? <Dashboard /> : <Navigate to="/" />}
             />
             <Route path="/working" element={<Working />} />
           </Routes>

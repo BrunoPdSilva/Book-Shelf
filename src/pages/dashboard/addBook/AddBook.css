@@ -1,17 +1,9 @@
-.addBook-Page {
-  width: 100%;
-  min-height: 100vh;
-
-  padding-bottom: 2.2rem;
-}
-
-.addBook-Page .addForm-wrapper {
+.add-form-wrapper {
   width: 80%;
   max-width: 50rem;
   min-height: 76rem;
 
   margin: 2.6rem auto;
-
   padding-top: 2.6rem;
 
   display: flex;
@@ -20,32 +12,30 @@
 
   background-color: var(--carousel-bg);
   border-radius: 12px;
+
+  font-family: 'Montserrat';
 }
 
-.addBook-Page .addForm-wrapper header {
-  font-family: 'Montserrat';
+.add-form-wrapper h2 {
   font-size: var(--lg);
   font-weight: 600;
-  line-height: 2.7rem;
   color: var(--title);
 }
 
-.addBook-Page .addForm-wrapper form {
+.add-form-wrapper form {
   width: 80%;
   padding-block: 2.6rem;
 }
 
-.addBook-Page .addForm-wrapper form p {
-  font-family: 'Montserrat';
-  font-size: 1.6rem;
+.add-form-wrapper form p {
+  margin-bottom: 0.6rem;
+  font-size: var(--sm);
   font-weight: 600;
   line-height: 2rem;
   color: var(--title);
-
-  margin-bottom: 0.6rem;
 }
 
-.addBook-Page .addForm-wrapper form input {
+.add-form-wrapper form input {
   width: 100%;
   height: 3rem;
 
@@ -56,14 +46,11 @@
   border: 1px solid #6f6f6f;
   border-radius: 6px;
 
-  font-family: 'Montserrat';
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 2rem;
+  font-size: var(--sm);
   color: var(--title);
 }
 
-.addBook-Page .addForm-wrapper form button {
+.add-form-wrapper form button {
   width: 100%;
   height: 4.6rem;
   margin-top: 1.6rem;
@@ -74,17 +61,13 @@
   border-radius: 6px;
   border: none;
 
-  text-align: center;
-
-  font-family: 'Montserrat';
   font-size: var(--sm);
   font-weight: 600;
-  line-height: 2rem;
   color: #fff;
   cursor: pointer;
   transition: 0.5s ease-in;
 }
 
-.addBook-Page .addForm-wrapper form button:hover {
+.add-form-wrapper form button:hover {
   background-position: right;
 }

@@ -1,8 +1,8 @@
 import { Scroll, GlobeHemisphereWest, Buildings, Calendar, CaretCircleUp, CaretCircleDown } from 'phosphor-react';
 import { useState } from 'react';
 
-import { BookInfo } from './BookInfo';
-import { BookCategory } from './BookCategory';
+import { BookInfo } from './bookInfo/BookInfo';
+import { BookCategory } from './bookCategory/BookCategory';
 
 import './BookDetails.css';
 

@@ -12,11 +12,7 @@ export function Input({ title, dispatch, value }) {
   return (
     <label>
       <p>{title}</p>
-      <input
-        type="text"
-        onChange={handleChange}
-        value={value}
-      />
+      <input type="text" onChange={handleChange} value={value} required />
     </label>
   );
 }

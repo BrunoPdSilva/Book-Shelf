@@ -4,6 +4,8 @@
 
   overflow-x: hidden;
   scroll-behavior: smooth;
+
+  font-family: 'Montserrat';
 }
 
 .home-page::-webkit-scrollbar {
@@ -24,7 +26,6 @@
 }
 
 .home-page main header h1 {
-  font-family: 'Montserrat';
   font-size: var(--xxl);
   font-weight: 600;
   line-height: 4.8rem;
@@ -34,7 +35,6 @@
 .home-page main header h2 {
   padding-block: 2.6rem 6.4rem;
 
-  font-family: 'Montserrat';
   font-size: var(--lg);
   font-weight: 500;
   line-height: 3.2rem;
@@ -58,11 +58,10 @@
   align-items: center;
   gap: 1.2rem;
 
-  font-family: 'Montserrat';
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 2.7rem;
-  color: #FFFFFF;
+  color: #ffffff;
 
   cursor: pointer;
   transition: 0.5s ease-in;
@@ -73,7 +72,6 @@
 
 .home-page main .explore-btn button:hover {
   background-position: right;
-
 }
 
 .home-page .home-side-image {
@@ -102,7 +100,8 @@ section.carousel-container {
 
   background-color: var(--carousel-bg);
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.35) -60px 0px 36px -28px inset, rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) -60px 0px 36px -28px inset,
+    rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   cursor: grabbing;
   transition: 0.3s ease-in-out;

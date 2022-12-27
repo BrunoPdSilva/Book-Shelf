@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { useCollection } from '../../hooks/useCollection';
 import { motion } from 'framer-motion';
-
-import { Books } from 'phosphor-react';
-import { BookCard } from '../../components/BookCard';
 import { Link } from 'react-router-dom';
+
+import { useCollection } from '../../hooks/useCollection';
+import { BookCard } from '../../components/BookCard';
+import { Books } from 'phosphor-react';
 
 import sideImage from '../../assets/home-side-image.svg';
 import './Home.css';

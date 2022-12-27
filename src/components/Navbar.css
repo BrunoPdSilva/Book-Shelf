@@ -122,7 +122,6 @@
   cursor: pointer;
 }
 
-
 @media (max-width: 1040px) {
   .navbar .nav-links {
     gap: 3.6rem;

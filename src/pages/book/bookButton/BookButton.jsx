@@ -1,4 +1,4 @@
-import { DownloadSimple, ShoppingCart, BookBookmark } from 'phosphor-react';
+import { ShoppingCart, BookBookmark } from 'phosphor-react';
 
 import './BookButton.css';
 

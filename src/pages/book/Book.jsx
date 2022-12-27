@@ -1,9 +1,9 @@
-import { useFetchDoc } from '../../hooks/useFetchDoc';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import { BookDetails } from './BookDetails';
-import { BookButton } from './BookButton';
+import { useFetchDoc } from '../../hooks/useFetchDoc';
+import { BookDetails } from './bookDetails/BookDetails';
+import { BookButton } from './bookButton/BookButton';
 
 import './Book.css';
 
