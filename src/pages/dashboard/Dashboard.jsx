@@ -32,7 +32,7 @@ export function Dashboard() {
         {action === 'add' && <AddBook setState={setAction} />}
         {action === 'delete' && <DeleteBook setState={setAction} />}
         {action === 'update' && <UpdateBook setState={setAction} />}
-      </section>
+      </section>      
     </div>
   );
 }

@@ -1,12 +1,16 @@
 import { useState } from 'react';
-
+import { dataBase } from '../../../firebase/config';
+import { doc, deleteDoc } from 'firebase/firestore';
 import { useCollection } from '../../../hooks/useCollection';
-import { useDelete } from '../../../hooks/useDelete';
+
+import { Feedback } from '../../../components/Feedback';
 
 import './DeleteBook.css';
 
 export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
   const { documents: books } = useCollection('books');
 
   function filterBooks(searchTerm) {
@@ -15,8 +19,25 @@ export function DeleteBook({ setState }) {
         return book.title.toLowerCase().includes(searchTerm.toLowerCase());
       });
       setBook(...result);
-    } else if (searchTerm.length == 0) {
+    } else if (searchTerm.length === 0) {
       setBook('');
+    }
+  }
+
+  async function handleDelete() {
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const docRef = doc(dataBase, 'boks', book.id);
+      await deleteDoc(docRef);
+      setSuccess(true);
+
+      setTimeout(() => setSuccess(null), 3000)
+    } catch (err) {
+      setError(err);
+
+      setTimeout(() => setError(null), 3000)
     }
   }
 
@@ -38,9 +59,12 @@ export function DeleteBook({ setState }) {
         </div>
       )}
 
+      {success && <Feedback text="Deletado com sucesso" type="success" color="#06D6A0" />}
+      {error && <Feedback text="Falha ao deletar" type="error" color="#EB5E28" />}
+
       <div className="buttons-container">
         <button onClick={() => setState('buttonsActive')}>Cancelar</button>
-        {book && <button onClick={() => useDelete(book.id)}>Deletar</button>}
+        {book && <button onClick={handleDelete}>Deletar</button>}
       </div>
     </div>
   );
