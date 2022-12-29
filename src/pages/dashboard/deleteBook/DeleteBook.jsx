@@ -1,29 +1,42 @@
-import { MagnifyingGlass } from 'phosphor-react';
+import { useState } from 'react';
+
+import { useCollection } from '../../../hooks/useCollection';
+import { useDelete } from '../../../hooks/useDelete';
 
 import './DeleteBook.css';
 
 export function DeleteBook() {
+  const [book, setBook] = useState(null);
+  const { documents: books } = useCollection('books');
+
+  function filterBooks(searchTerm) {
+    const result = books.filter(book => {
+      return book.title.toLowerCase() === searchTerm.toLowerCase();
+    });
+    setBook(...result);
+  }
+
   return (
     <div className="delete-book-wrapper">
       <h2>Deletar livro</h2>
 
-      <div className="delete-input-group">
-        <input type="text" placeholder="Título do livro" />
-        <button>
-          <MagnifyingGlass size={18} color="#FFF" />
-        </button>
-      </div>
-
-      <div className="book-cover-container">
-        <img
-          src="https://imagens.lelivros.org/2013/05/Download-O-Poder-do-Habito-Charles-Duhigg-em-ePUB-mobi-PDF2-370x532.jpg"
-          alt=""
+      <div className="delete-input-container">
+        <input
+          type="text"
+          placeholder="Pesquisar livro"
+          onChange={e => filterBooks(e.target.value)}
         />
       </div>
 
+      {book && (
+        <div className="book-cover-container">
+          <img src={book.image} alt="Capa do livro" />
+        </div>
+      )}
+
       <div className="buttons-container">
         <button>Cancelar</button>
-        <button>Deletar</button>
+        {book && <button onClick={() => useDelete(book.id)}>Deletar</button>}
       </div>
     </div>
   );
