@@ -4,7 +4,7 @@ import { dataBase } from '../../../firebase/config';
 
 import { Input } from '../Input';
 
-import './AddBook.css';
+import './UpdateBook.css';
 
 const initialState = {
   title: '',
@@ -51,7 +51,8 @@ function reducer(state, action) {
   }
 }
 
-export function AddBook({ setState }) {
+
+export function UpdateBook({ setState }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   async function handleSubmit(e) {
@@ -64,8 +65,8 @@ export function AddBook({ setState }) {
   }
 
   return (
-    <div className="add-form-wrapper">
-      <h2>Adicionar livro</h2>
+    <div className="update-form-wrapper">
+      <h2>Atualizar livro</h2>
 
       <form onSubmit={handleSubmit}>
         <Input title="Título" dispatch={dispatch} value={state.title} />

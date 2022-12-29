@@ -5,15 +5,19 @@ import { useDelete } from '../../../hooks/useDelete';
 
 import './DeleteBook.css';
 
-export function DeleteBook() {
+export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);
   const { documents: books } = useCollection('books');
 
   function filterBooks(searchTerm) {
-    const result = books.filter(book => {
-      return book.title.toLowerCase() === searchTerm.toLowerCase();
-    });
-    setBook(...result);
+    if (searchTerm.length > 0) {
+      const result = books.filter(book => {
+        return book.title.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+      setBook(...result);
+    } else if (searchTerm.length == 0) {
+      setBook('');
+    }
   }
 
   return (
@@ -35,7 +39,7 @@ export function DeleteBook() {
       )}
 
       <div className="buttons-container">
-        <button>Cancelar</button>
+        <button onClick={() => setState('buttonsActive')}>Cancelar</button>
         {book && <button onClick={() => useDelete(book.id)}>Deletar</button>}
       </div>
     </div>
