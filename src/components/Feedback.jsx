@@ -11,8 +11,8 @@ export function Feedback({ type, text, color }) {
           <motion.div
             className="feedback-container"
             style={{ backgroundColor: color }}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
               type: 'spring',
               stiffness: 260,
@@ -27,6 +27,13 @@ export function Feedback({ type, text, color }) {
         <motion.div
           className="feedback-container"
           style={{ backgroundColor: color }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
         >
           <CheckCircle size={32} />
           {text}

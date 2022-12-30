@@ -51,7 +51,6 @@ function reducer(state, action) {
   }
 }
 
-
 export function UpdateBook({ setState }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 

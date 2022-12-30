@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { dataBase } from '../../../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
-import { useCollection } from '../../../hooks/useCollection';
 
+import { useCollection } from '../../../hooks/useCollection';
 import { Feedback } from '../../../components/Feedback';
 
 import './DeleteBook.css';
@@ -11,6 +11,7 @@ export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+
   const { documents: books } = useCollection('books');
 
   function filterBooks(searchTerm) {
@@ -29,14 +30,14 @@ export function DeleteBook({ setState }) {
     setSuccess(null);
 
     try {
-      const docRef = doc(dataBase, 'boks', book.id);
+      const docRef = doc(dataBase, 'books', book.id);
       await deleteDoc(docRef);
+      setBook(null);
       setSuccess(true);
-
       setTimeout(() => setSuccess(null), 3000)
     } catch (err) {
+      setBook(null);
       setError(err);
-
       setTimeout(() => setError(null), 3000)
     }
   }
