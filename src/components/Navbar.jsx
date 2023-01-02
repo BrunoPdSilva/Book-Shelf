@@ -55,7 +55,7 @@ export function Navbar({ toggle, theme }) {
                 Livros
               </motion.li>
             </Link>
-            <Link to="/working">
+            <Link to="/contact">
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
