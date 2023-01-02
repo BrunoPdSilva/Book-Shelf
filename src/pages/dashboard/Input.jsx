@@ -1,4 +1,4 @@
-export function Input({ title, dispatch, value }) {
+export function Input({ title, dispatch, value, placeholder }) {
   function handleChange(e) {
     if (title === 'Categorias') {
       const text = e.target.value;
@@ -12,7 +12,7 @@ export function Input({ title, dispatch, value }) {
   return (
     <label>
       <p>{title}</p>
-      <input type="text" onChange={handleChange} value={value} required />
+      <input type="text" onChange={handleChange} value={value} placeholder={placeholder} required />
     </label>
   );
 }

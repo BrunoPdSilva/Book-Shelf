@@ -102,8 +102,8 @@ export function AddBook({ setState }) {
       </div>
       </form>
 
-      {success && <Feedback text="Deletado com sucesso" type="success" color="#06D6A0" />}
-      {error && <Feedback text="Falha ao deletar" type="error" color="#EB5E28" />}
+      {success && <Feedback text="Adicionado com sucesso" type="success" color="#06D6A0" />}
+      {error && <Feedback text="Falha ao adicionar" type="error" color="#EB5E28" />}
     </div>
   );
 }

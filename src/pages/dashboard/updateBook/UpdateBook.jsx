@@ -1,7 +1,9 @@
-import { useReducer } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
+import { useState, useReducer } from 'react';
+import { useCollection } from '../../../hooks/useCollection';
+import { updateDoc, doc } from 'firebase/firestore';
 import { dataBase } from '../../../firebase/config';
 
+import { Feedback } from '../../../components/Feedback';
 import { Input } from '../Input';
 
 import './UpdateBook.css';
@@ -17,7 +19,7 @@ const initialState = {
   buy: '',
   download: '',
   sinopse: '',
-  publishDate: ''
+  publishDate: '',
 };
 
 function reducer(state, action) {
@@ -42,8 +44,22 @@ function reducer(state, action) {
       return { ...state, download: action.payload };
     case 'Sinopse':
       return { ...state, sinopse: action.payload };
-    case "Publicação":
+    case 'Publicação':
       return { ...state, publishDate: action.payload };
+    case 'UPDATE_BOOK':
+      return {
+        title: action.payload?.title,
+        author: action.payload?.author,
+        length: action.payload?.length,
+        categories: action.payload?.categories,
+        editor: action.payload?.editor,
+        language: action.payload?.language,
+        image: action.payload?.image,
+        buy: action.payload?.buy,
+        download: action.payload?.download,
+        sinopse: action.payload?.sinopse,
+        publishDate: action.payload?.publishDate
+      };
     case 'clean':
       return initialState;
     default:
@@ -53,12 +69,43 @@ function reducer(state, action) {
 
 export function UpdateBook({ setState }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [book, setBook] = useState(null);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const { documents: books } = useCollection('books');
+
+  function filterBooks(searchTerm) {
+    if (searchTerm.length > 0) {
+      const result = books.filter(book => {
+        return book.title.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+      setBook(...result);
+      if (book !== null) {
+        dispatch({ type: 'UPDATE_BOOK', payload: book });
+      }
+    } else if (searchTerm.length === 0) {
+      setBook('');
+    }
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const collectionRef = collection(dataBase, 'books');
-    await addDoc(collectionRef, state);
+    const collectionRef = doc(dataBase, 'books', book.id);
+
+    updateDoc(collectionRef, state)
+      .then(() => {
+        setBook(null)
+        setSuccess(true);
+        setTimeout(() => setSuccess(null), 3000)
+        dispatch({ type: 'clean' });
+      })
+      .catch(err => {
+        console.log(err)
+        setError(err);
+        setTimeout(() => setError(null), 3000)
+      });
 
     dispatch({ type: 'clean' });
   }
@@ -67,30 +114,51 @@ export function UpdateBook({ setState }) {
     <div className="update-form-wrapper">
       <h2>Atualizar livro</h2>
 
-      <form onSubmit={handleSubmit}>
-        <Input title="Título" dispatch={dispatch} value={state.title} />
-        <div className="double-input">
-          <Input title="Autor" dispatch={dispatch} value={state.author} />
-          <Input title="Qnt. Páginas" dispatch={dispatch} value={state.length} />
-        </div>
-        <Input title="Categorias" dispatch={dispatch} value={state.categories} />
-        <div className="double-input">
-          <Input title="Editora" dispatch={dispatch} value={state.editor} />
-          <Input title="Idioma" dispatch={dispatch} value={state.language} />
-        </div>
-        <Input title="URL da imagem" dispatch={dispatch} value={state.image} />
-        <div className="double-input">
-          <Input title="URL da compra" dispatch={dispatch} value={state.buy} />
-          <Input title="Publicação" dispatch={dispatch} value={state.publishDate} />
-        </div>
-        <Input title="URL do livro" dispatch={dispatch} value={state.download} />
-        <Input title="Sinopse" dispatch={dispatch} value={state.sinopse} />
-
-      <div className="buttons-container">
-        <button onClick={() => setState('buttonsActive')}>Cancelar</button>
-        <button type="submit">Adicionar</button>
+      <div className="delete-input-container">
+        <input
+          type="text"
+          placeholder="Pesquisar livro"
+          onChange={e => filterBooks(e.target.value)}
+        />
       </div>
+
+      {book && (
+        <div className="book-cover-container">
+          <img src={book.image} alt="Capa do livro" />
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit}>
+        {book && (
+          <>
+            <Input title="Título" dispatch={dispatch} placeholder={book?.title} value={state?.title} />
+            <div className="double-input">
+              <Input title="Autor" dispatch={dispatch} placeholder={book?.author} value={state?.author} />
+              <Input title="Qnt. Páginas" dispatch={dispatch} placeholder={book?.length} value={state?.length} />
+            </div>
+            <Input title="Categorias" dispatch={dispatch} placeholder={book?.categories} value={state?.categories} />
+            <div className="double-input">
+              <Input title="Editora" dispatch={dispatch} placeholder={book?.editor} value={state?.editor} />
+              <Input title="Idioma" dispatch={dispatch} placeholder={book?.language} value={state?.language} />
+            </div>
+            <Input title="URL da imagem" dispatch={dispatch} placeholder={book?.image} value={state?.image} />
+            <div className="double-input">
+              <Input title="URL da compra" dispatch={dispatch} placeholder={book?.buy} value={state?.buy} />
+              <Input title="Publicação" dispatch={dispatch} placeholder={book?.publishDate} value={state?.publishDate} />
+            </div>
+            <Input title="URL do livro" dispatch={dispatch} placeholder={book?.download} value={state?.download} />
+            <Input title="Sinopse" dispatch={dispatch} placeholder={book?.sinopse} value={state?.sinopse} />
+          </>
+        )}
+
+
+        <div className="buttons-container">
+          <button onClick={() => setState('buttonsActive')}>Cancelar</button>
+          <button type="submit">Atualizar</button>
+        </div>
       </form>
+      {success && <Feedback text="Atualizado com sucesso" type="success" color="#06D6A0" />}
+      {error && <Feedback text="Falha ao atualizar livro" type="error" color="#EB5E28" />}
     </div>
   );
 }
