@@ -1,4 +1,4 @@
-.book-page .book-details-container .book-categories {
+.book-categories {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   margin-bottom: 2rem;
 }
 
-.book-page .book-details-container .BookCategory {
+.BookCategory {
   height: 4.2rem;
   padding: 0.8rem 1.6rem;
 
@@ -22,12 +22,12 @@
   border-radius: 6px;
 }
 
-.book-page .book-details-container .BookCategory img {
+.BookCategory img {
   width: 2.6rem;
   height: 2.6rem;
 }
 
-.book-page .book-details-container .BookCategory .category-name {
+.BookCategory .category-name {
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.5rem;

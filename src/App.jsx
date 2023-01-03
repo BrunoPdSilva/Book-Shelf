@@ -4,6 +4,7 @@ import useLocalStorage from 'use-local-storage';
 
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Contact } from './pages/contact/Contact';
+import { ExploreBooks } from './pages/ExploreBooks/ExploreBooks';
 import { About } from './pages/about/About';
 import { LoginPage } from './pages/login/Login';
 import { Working } from './pages/working/Working';
@@ -43,6 +44,10 @@ function App() {
             <Route
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/books"
+              element={user ? <ExploreBooks /> : <Navigate to="/login" />}
             />
             <Route
               path="/books/:id"

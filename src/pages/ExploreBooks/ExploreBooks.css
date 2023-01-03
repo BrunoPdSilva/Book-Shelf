@@ -1,0 +1,158 @@
+.explore-books-page {
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Roboto';
+}
+
+.explore-books-page header {
+  width: min(100vw - 20%);
+  margin: 4rem auto 0;
+  padding-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--text);
+}
+
+.explore-books-page header h1 {
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.2rem;
+  color: var(--title);
+}
+
+.explore-books-page header p {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: var(--title);
+}
+
+.explore-books-page header p span {
+  font-family: 'Montserrat';
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: var(--text);
+}
+
+.explore-books-page header .input-group {
+  width: 24.9rem;
+  height: 4.6rem;
+
+  padding-inline: 2.2rem 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid var(--text);
+  border-radius: 999px;
+}
+
+.explore-books-page header .input-group input {
+  height: 100%;
+  width: 100%;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  color: var(--text);
+}
+
+.explore-books-page header .input-group input::-webkit-input-placeholder {
+  color: var(--text);
+}
+
+.explore-books-page main {
+  width: min(100vw - 20%);
+  margin: auto;
+
+  display: flex;
+}
+
+.explore-books-page main aside {
+  width: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+
+  padding: 3.4rem 1.2rem;
+
+}
+
+.explore-books-page main .books-container {
+  width: 100%;
+  display: grid;
+
+  padding: 2rem 2.6rem 2.6rem;
+
+  border-left: 1px solid var(--text);
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fit, 35.5rem);
+  grid-row-gap: 2.6rem;
+  grid-column-gap: 2.6rem;
+  justify-items: center;
+}
+
+.explore-books-page main .books-container .card-wrapper {
+  width: 22rem;
+  height: 35.5rem;
+
+  padding-top: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 12px;
+
+  background-color: var(--carousel-bg);
+}
+
+.explore-books-page main .books-container .card-wrapper img {
+  width: 18rem;
+  height: 26rem;
+  border-radius: 6px;
+}
+
+.explore-books-page main .books-container .card-wrapper footer {
+  width: 18rem;
+}
+
+.explore-books-page main .books-container .card-wrapper footer h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.6rem;
+  font-family: 'Montserrat';
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+  text-align: center;
+  color: var(--title);
+}
+
+.explore-books-page main .books-container .card-wrapper footer p {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--title);
+}

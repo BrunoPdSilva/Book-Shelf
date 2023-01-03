@@ -75,7 +75,7 @@
   color: var(--title);
 }
 
-footer {
+.about-page footer {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -83,7 +83,7 @@ footer {
   margin-bottom: 2.2rem;
 }
 
-footer p {
+.about-page footer p {
   font-size: var(--base);
   line-height: 2.8rem;
   color: var(--title);
