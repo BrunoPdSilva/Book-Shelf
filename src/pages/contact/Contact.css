@@ -1,4 +1,10 @@
 .contact-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contact-page-container {
   width: min(100vw - 20%);
   height: 100%;
 
@@ -11,11 +17,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.contact-page .contact-info {
+.contact-page-container .contact-info {
   height: fit-content;
 }
 
-.contact-page .contact-info h1 {
+.contact-page-container .contact-info h1 {
   font-size: var(--xxl);
   font-weight: 600;
   line-height: 42px;
@@ -25,7 +31,7 @@
   margin-bottom: 7.2rem;
 }
 
-.contact-page .contact-info div {
+.contact-page-container .contact-info div {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -33,13 +39,13 @@
   margin-bottom: 1.2rem;
 }
 
-.contact-page .contact-info div p {
+.contact-page-container .contact-info div p {
   font-size: var(--base);
   line-height: 2.1rem;
   color: var(--text);
 }
 
-.contact-page .contact-info button {
+.contact-page-container .contact-info button {
   width: 100%;
   height: 4.8rem;
 
@@ -66,15 +72,15 @@
   transition: 0.5s ease-in-out;
 }
 
-.contact-page .contact-info button:hover {
+.contact-page-container .contact-info button:hover {
   background-position: right;
 }
 
-.contact-page .img-section {
+.contact-page-container .img-section {
   height: 60rem;
 }
 
-.contact-page .img-section img {
+.contact-page-container .img-section img {
   width: 100%;
   height: fit-content;
   max-height: 60rem;
@@ -82,34 +88,34 @@
 }
 
 @media (max-width: 1281px) {
-  .contact-page .img-section img {
+  .contact-page-container .img-section img {
     height: 52rem;
   }
 }
 
 @media (max-width: 1060px) {
-  .contact-page .contact-info h1 {
+  .contact-page-container .contact-info h1 {
     font-size: var(--xl);
   }
 }
 
 @media (max-width: 830px) {
-  .contact-page {
+  .contact-page-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .contact-page .contact-info {
+  .contact-page-container .contact-info {
     margin-top: 4rem;
   }
 }
 
 @media (max-width: 460px) {
-  .contact-page .contact-info h1 {
+  .contact-page-container .contact-info h1 {
     font-size: var(--lg);
   }
 
-  .contact-page .contact-info div p {
+  .contact-page-container .contact-info div p {
     font-size: var(--base);
   }
 }
