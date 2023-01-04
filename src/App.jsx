@@ -3,17 +3,17 @@ import { useAuthContext } from './hooks/useAuthContext';
 import useLocalStorage from 'use-local-storage';
 
 import { Dashboard } from './pages/dashboard/Dashboard';
-import { Contact } from './pages/contact/Contact';
+import { Contact } from './pages/Contact';
 import { ExploreBooks } from './pages/ExploreBooks/ExploreBooks';
-import { About } from './pages/about/About';
-import { LoginPage } from './pages/login/Login';
-import { Working } from './pages/working/Working';
+import { About } from './pages/About';
+import { LoginPage } from './pages/Login';
+import { Working } from './pages/Working';
 import { Navbar } from './components/Navbar';
-import { Signup } from './pages/signup/Signup';
-import { Home } from './pages/home/Home';
+import { Signup } from './pages/Signup';
+import { Home } from './pages/Home';
 import { Book } from './pages/book/Book';
 
-import './App.css';
+import './styles/App.scss';
 
 function App() {
   const [theme, setTheme] = useLocalStorage(

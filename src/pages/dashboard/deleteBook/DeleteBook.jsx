@@ -34,11 +34,11 @@ export function DeleteBook({ setState }) {
       await deleteDoc(docRef);
       setBook(null);
       setSuccess(true);
-      setTimeout(() => setSuccess(null), 3000)
+      setTimeout(() => setSuccess(null), 3000);
     } catch (err) {
       setBook(null);
       setError(err);
-      setTimeout(() => setError(null), 3000)
+      setTimeout(() => setError(null), 3000);
     }
   }
 
@@ -60,8 +60,12 @@ export function DeleteBook({ setState }) {
         </div>
       )}
 
-      {success && <Feedback text="Deletado com sucesso" type="success" color="#06D6A0" />}
-      {error && <Feedback text="Falha ao deletar" type="error" color="#EB5E28" />}
+      {success && (
+        <Feedback text="Deletado com sucesso" type="success" color="#06D6A0" />
+      )}
+      {error && (
+        <Feedback text="Falha ao deletar" type="error" color="#EB5E28" />
+      )}
 
       <div className="buttons-container">
         <button onClick={() => setState('buttonsActive')}>Cancelar</button>

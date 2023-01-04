@@ -1,20 +1,20 @@
-import HTML from '../../assets/html.svg';
-import CSS from '../../assets/css.png';
-import JavaScript from '../../assets/javascript.png';
-import Vite from '../../assets/vite.png';
-import React from '../../assets/react.svg';
-import Firebase from '../../assets/firebase.png';
-import Framer from '../../assets/framer.png';
-import Phosphor from '../../assets/phosphor.png';
+import HTML from '../assets/html.svg';
+import CSS from '../assets/css.png';
+import JavaScript from '../assets/javascript.png';
+import Vite from '../assets/vite.png';
+import React from '../assets/react.svg';
+import Firebase from '../assets/firebase.png';
+import Framer from '../assets/framer.png';
+import Phosphor from '../assets/phosphor.png';
 
-import { Technology } from '../../components/Technology';
+import { Technology } from '../components/Technology';
 import { Copyright } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
-import Home from '../../assets/home-desktop.png';
-import Book from '../../assets/book-desktop.png';
+import Home from '../assets/home-desktop.png';
+import Book from '../assets/book-desktop.png';
 
-import './About.css';
+import '../styles/pages/About.scss';
 
 export function About() {
   return (

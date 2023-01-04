@@ -1,10 +1,17 @@
-import { Scroll, GlobeHemisphereWest, Buildings, Calendar, CaretCircleUp, CaretCircleDown } from 'phosphor-react';
+import {
+  Scroll,
+  GlobeHemisphereWest,
+  Buildings,
+  Calendar,
+  CaretCircleUp,
+  CaretCircleDown,
+} from 'phosphor-react';
 import { useState } from 'react';
 
-import { BookInfo } from './bookInfo/BookInfo';
-import { BookCategory } from './bookCategory/BookCategory';
+import { BookInfo } from './BookInfo';
+import { BookCategory } from './BookCategory';
 
-import './BookDetails.css';
+import '../../styles/pages/book/BookDetails.scss';
 
 export function BookDetails({ document }) {
   const [showMoreText, setShowMoreText] = useState(false);
@@ -14,7 +21,9 @@ export function BookDetails({ document }) {
       <div className="sumario">
         <h1>{document.title}</h1>
         <h2>{document.author}</h2>
-        <p>{showMoreText ? document.sinopse : document.sinopse.substr(0, 840)}</p>
+        <p>
+          {showMoreText ? document.sinopse : document.sinopse.substr(0, 840)}
+        </p>
         <button onClick={() => setShowMoreText(!showMoreText)}>
           {showMoreText ? (
             <CaretCircleUp size={22} color="#FFFFFF" />

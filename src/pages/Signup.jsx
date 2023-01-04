@@ -1,7 +1,7 @@
 import { useState, useReducer } from 'react';
-import { useSignup } from '../../hooks/useSignup';
+import { useSignup } from '../hooks/useSignup';
 
-import './Signup.css';
+import '../styles/pages/Signup.scss';
 
 function reducer(state, action) {
   switch (action.type) {

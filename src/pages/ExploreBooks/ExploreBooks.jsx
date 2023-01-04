@@ -1,13 +1,21 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCollection } from '../../hooks/useCollection';
 
-import { BookCategory } from '../book/bookDetails/bookCategory/BookCategory';
+import { BookCategory } from '../book/BookCategory';
 import { MagnifyingGlass } from 'phosphor-react';
+import { BookComponent } from './BookComponent';
 
-import './ExploreBooks.css';
+import '../../styles/pages/ExploreBooks.scss';
 
 export function ExploreBooks() {
-  const { documents: books } = useCollection('books');
+  const { documents } = useCollection('books');
+
+  function filter(query) {
+    books = books.filter(book =>
+      book.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }
 
   return (
     <div className="explore-books-page">
@@ -23,7 +31,11 @@ export function ExploreBooks() {
         </div>
 
         <div className="input-group">
-          <input type="text" placeholder="Procurar livro" />
+          <input
+            type="text"
+            placeholder="Procurar livro"
+            onChange={e => setTerm(e.target.value)}
+          />
           <MagnifyingGlass size={22} color="var(--text)" />
         </div>
       </header>
@@ -42,17 +54,9 @@ export function ExploreBooks() {
         </aside>
 
         <section className="books-container">
-          {books &&
-            books.map(book => (
-              <Link to={`/books/${book.id}`}>
-                <div className="card-wrapper" key={book.image}>
-                  <img src={book.image} alt="" />
-                  <footer>
-                    <h3>{book.title}</h3>
-                    <p>{book.author}</p>
-                  </footer>
-                </div>
-              </Link>
+          {documents &&
+            documents.map(book => (
+              <BookComponent book={book} key={book.image} />
             ))}
         </section>
       </main>

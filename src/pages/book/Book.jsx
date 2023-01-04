@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { useFetchDoc } from '../../hooks/useFetchDoc';
-import { BookDetails } from './bookDetails/BookDetails';
-import { BookButton } from './bookButton/BookButton';
+import { BookDetails } from './BookDetails';
+import { BookButton } from './BookButton';
 
-import './Book.css';
+import '../../styles/pages/book/Book.scss';
 
 export function Book() {
   const { id } = useParams();

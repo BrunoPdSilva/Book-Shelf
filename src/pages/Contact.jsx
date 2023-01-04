@@ -1,13 +1,13 @@
 import { MapPin, Envelope, WhatsappLogo } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
-import ContactIMG from '../../assets/Contact.svg';
+import ContactIMG from '../assets/Contact.svg';
 
-import './Contact.css';
+import '../styles/pages/Contact.scss';
 
 export function Contact() {
   return (
-    <div className='contact-page'>
+    <div className="contact-page">
       <main className="contact-page-container">
         <motion.section
           className="contact-info"

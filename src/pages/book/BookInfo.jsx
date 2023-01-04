@@ -1,4 +1,4 @@
-import './BookInfo.css';
+import '../../styles/pages/book/BookInfo.scss';
 
 export function BookInfo({ title, children, data }) {
   return (

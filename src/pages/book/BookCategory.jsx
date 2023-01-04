@@ -1,16 +1,16 @@
-import FiccaoCientifica from '../../../../assets/Icons/Ficcao Cientifica.png';
-import Informatica from '../../../../assets/Icons/Informatica.png';
-import Autoajuda from '../../../../assets/Icons/Autoajuda.png';
-import Biografia from '../../../../assets/Icons/Biografia.png';
-import Aventura from '../../../../assets/Icons/Aventura.png';
-import Educacao from '../../../../assets/Icons/Educacao.png';
-import Fantasia from '../../../../assets/Icons/Fantasia.png';
-import Historia from '../../../../assets/Icons/Historia.png';
-import Terror from '../../../../assets/Icons/Terror.png';
-import Humor from '../../../../assets/Icons/Humor.png';
-import HQ from '../../../../assets/Icons/HQ.png';
+import FiccaoCientifica from '../../assets/Icons/Ficcao Cientifica.png';
+import Informatica from '../../assets/Icons/Informatica.png';
+import Autoajuda from '../../assets/Icons/Autoajuda.png';
+import Biografia from '../../assets/Icons/Biografia.png';
+import Aventura from '../../assets/Icons/Aventura.png';
+import Educacao from '../../assets/Icons/Educacao.png';
+import Fantasia from '../../assets/Icons/Fantasia.png';
+import Historia from '../../assets/Icons/Historia.png';
+import Terror from '../../assets/Icons/Terror.png';
+import Humor from '../../assets/Icons/Humor.png';
+import HQ from '../../assets/Icons/HQ.png';
 
-import './BookCategory.css';
+import '../../styles/pages/book/BookCategory.scss';
 
 export function BookCategory({ type }) {
   function getImage(type) {

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 import { dataBase } from '../firebase/config';
-import { collection, onSnapshot, query, where, addDoc } from 'firebase/firestore';
+import { collection, onSnapshot, query, where } from 'firebase/firestore';
 
 export function useCollection(collec, _query) {
   const [documents, setDocuments] = useState(null);
@@ -12,17 +12,17 @@ export function useCollection(collec, _query) {
     let collectionRef = collection(dataBase, collec);
 
     if (q) {
-      collectionRef = query(collectionRef, where(...q))
+      collectionRef = query(collectionRef, where(...q));
     }
 
     const unsub = onSnapshot(collectionRef, snapshot => {
-      let result = [];
+      let results = [];
 
       snapshot.docs.forEach(doc => {
-        result.push({ ...doc.data(), id: doc.id });
+        results.push({ ...doc.data(), id: doc.id });
       });
 
-      setDocuments(result);
+      setDocuments(results);
     });
     return () => unsub();
   }, [collec, q]);

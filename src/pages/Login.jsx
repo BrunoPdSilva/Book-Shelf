@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useAuthContext } from '../../hooks/useAuthContext';
-import { useLogin } from '../../hooks/useLogin';
+import { useAuthContext } from '../hooks/useAuthContext';
+import { useLogin } from '../hooks/useLogin';
 
 import { Eye, EyeSlash } from 'phosphor-react';
-import SideImage from '../../assets/login-image.svg';
-import './Login.css';
+import SideImage from '../assets/login-image.svg';
+
+import '../styles/pages/Login.scss';
 
 export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);

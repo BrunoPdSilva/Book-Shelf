@@ -1,4 +1,4 @@
-import './Technology.css';
+import '../styles/components/Technology.scss';
 
 export function Technology({ img, text}) {
   return (

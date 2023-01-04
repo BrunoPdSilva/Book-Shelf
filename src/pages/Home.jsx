@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-import { useCollection } from '../../hooks/useCollection';
-import { BookCard } from '../../components/BookCard';
+import { useCollection } from '../hooks/useCollection';
+import { BookCard } from '../components/BookCard';
 import { Books } from 'phosphor-react';
 
-import sideImage from '../../assets/home-side-image.svg';
-import './Home.css';
+import sideImage from '../assets/home-side-image.svg';
+import '../styles/pages/Home.scss';
 
 export function Home() {
   const { documents: books } = useCollection('books');
@@ -30,7 +30,7 @@ export function Home() {
 
           <Link to="/working" className="explore-btn">
             <button>
-              <Books size={22} weight="duotone" color='#FFF'/>
+              <Books size={22} weight="duotone" color="#FFF" />
               Explorar livros
             </button>
           </Link>

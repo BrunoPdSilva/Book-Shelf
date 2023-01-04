@@ -1,6 +1,6 @@
 import { ShoppingCart, BookBookmark } from 'phosphor-react';
 
-import './BookButton.css';
+import '../../styles/pages/book/BookButton.scss';
 
 export function BookButton({ type }) {
   return (

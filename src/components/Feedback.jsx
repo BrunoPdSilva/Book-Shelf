@@ -1,7 +1,7 @@
 import { XCircle, CheckCircle } from 'phosphor-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import './Feedback.css';
+import '../styles/components/Feedback.scss';
 
 export function Feedback({ type, text, color }) {
   return (

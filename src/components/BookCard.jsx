@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { BookBookmark } from 'phosphor-react';
-import './BookCard.css';
+import '../styles/components/BookCard.scss';
 
 export function BookCard({ book }) {
   const [isCardActive, setIsCardAtive] = useState(false);
