@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { dataBase } from '../../../firebase/config';
+import { dataBase } from '../../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
 
-import { useCollection } from '../../../hooks/useCollection';
-import { Feedback } from '../../../components/Feedback';
+import { useCollection } from '../../hooks/useCollection';
+import { Feedback } from '../../components/Feedback';
 
-import './DeleteBook.css';
+import '../../styles/pages/dashboard/DeleteBook.scss';
 
 export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);

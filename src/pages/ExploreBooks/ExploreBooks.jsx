@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCollection } from '../../hooks/useCollection';
 
@@ -10,12 +9,6 @@ import '../../styles/pages/ExploreBooks.scss';
 
 export function ExploreBooks() {
   const { documents } = useCollection('books');
-
-  function filter(query) {
-    books = books.filter(book =>
-      book.title.toLowerCase().includes(query.toLowerCase())
-    );
-  }
 
   return (
     <div className="explore-books-page">
@@ -42,12 +35,6 @@ export function ExploreBooks() {
 
       <main>
         <aside>
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
           <BookCategory type="Fantasia" />
           <BookCategory type="Fantasia" />
           <BookCategory type="Fantasia" />

@@ -1,4 +1,4 @@
-import './ActionButton.css';
+import '../../styles/pages/dashboard/ActionButton.scss';
 
 export function ActionButton({ text, color, children, type, setState }) {
   return (

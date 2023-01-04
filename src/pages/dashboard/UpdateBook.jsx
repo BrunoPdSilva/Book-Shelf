@@ -1,12 +1,12 @@
 import { useState, useReducer } from 'react';
-import { useCollection } from '../../../hooks/useCollection';
+import { useCollection } from '../../hooks/useCollection';
 import { updateDoc, doc } from 'firebase/firestore';
-import { dataBase } from '../../../firebase/config';
+import { dataBase } from '../../firebase/config';
 
-import { Feedback } from '../../../components/Feedback';
-import { Input } from '../Input';
+import { Feedback } from '../../components/Feedback';
+import { Input } from './Input';
 
-import './UpdateBook.css';
+import '../../styles/pages/dashboard/UpdateBook.scss';
 
 const initialState = {
   title: '',
@@ -58,7 +58,7 @@ function reducer(state, action) {
         buy: action.payload?.buy,
         download: action.payload?.download,
         sinopse: action.payload?.sinopse,
-        publishDate: action.payload?.publishDate
+        publishDate: action.payload?.publishDate,
       };
     case 'clean':
       return initialState;
@@ -96,15 +96,15 @@ export function UpdateBook({ setState }) {
 
     updateDoc(collectionRef, state)
       .then(() => {
-        setBook(null)
+        setBook(null);
         setSuccess(true);
-        setTimeout(() => setSuccess(null), 3000)
+        setTimeout(() => setSuccess(null), 3000);
         dispatch({ type: 'clean' });
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
         setError(err);
-        setTimeout(() => setError(null), 3000)
+        setTimeout(() => setError(null), 3000);
       });
 
     dispatch({ type: 'clean' });
@@ -131,34 +131,100 @@ export function UpdateBook({ setState }) {
       <form onSubmit={handleSubmit}>
         {book && (
           <>
-            <Input title="Título" dispatch={dispatch} placeholder={book?.title} value={state?.title} />
+            <Input
+              title="Título"
+              dispatch={dispatch}
+              placeholder={book?.title}
+              value={state?.title}
+            />
             <div className="double-input">
-              <Input title="Autor" dispatch={dispatch} placeholder={book?.author} value={state?.author} />
-              <Input title="Qnt. Páginas" dispatch={dispatch} placeholder={book?.length} value={state?.length} />
+              <Input
+                title="Autor"
+                dispatch={dispatch}
+                placeholder={book?.author}
+                value={state?.author}
+              />
+              <Input
+                title="Qnt. Páginas"
+                dispatch={dispatch}
+                placeholder={book?.length}
+                value={state?.length}
+              />
             </div>
-            <Input title="Categorias" dispatch={dispatch} placeholder={book?.categories} value={state?.categories} />
+            <Input
+              title="Categorias"
+              dispatch={dispatch}
+              placeholder={book?.categories}
+              value={state?.categories}
+            />
             <div className="double-input">
-              <Input title="Editora" dispatch={dispatch} placeholder={book?.editor} value={state?.editor} />
-              <Input title="Idioma" dispatch={dispatch} placeholder={book?.language} value={state?.language} />
+              <Input
+                title="Editora"
+                dispatch={dispatch}
+                placeholder={book?.editor}
+                value={state?.editor}
+              />
+              <Input
+                title="Idioma"
+                dispatch={dispatch}
+                placeholder={book?.language}
+                value={state?.language}
+              />
             </div>
-            <Input title="URL da imagem" dispatch={dispatch} placeholder={book?.image} value={state?.image} />
+            <Input
+              title="URL da imagem"
+              dispatch={dispatch}
+              placeholder={book?.image}
+              value={state?.image}
+            />
             <div className="double-input">
-              <Input title="URL da compra" dispatch={dispatch} placeholder={book?.buy} value={state?.buy} />
-              <Input title="Publicação" dispatch={dispatch} placeholder={book?.publishDate} value={state?.publishDate} />
+              <Input
+                title="URL da compra"
+                dispatch={dispatch}
+                placeholder={book?.buy}
+                value={state?.buy}
+              />
+              <Input
+                title="Publicação"
+                dispatch={dispatch}
+                placeholder={book?.publishDate}
+                value={state?.publishDate}
+              />
             </div>
-            <Input title="URL do livro" dispatch={dispatch} placeholder={book?.download} value={state?.download} />
-            <Input title="Sinopse" dispatch={dispatch} placeholder={book?.sinopse} value={state?.sinopse} />
+            <Input
+              title="URL do livro"
+              dispatch={dispatch}
+              placeholder={book?.download}
+              value={state?.download}
+            />
+            <Input
+              title="Sinopse"
+              dispatch={dispatch}
+              placeholder={book?.sinopse}
+              value={state?.sinopse}
+            />
           </>
         )}
-
 
         <div className="buttons-container">
           <button onClick={() => setState('buttonsActive')}>Cancelar</button>
           <button type="submit">Atualizar</button>
         </div>
       </form>
-      {success && <Feedback text="Atualizado com sucesso" type="success" color="#06D6A0" />}
-      {error && <Feedback text="Falha ao atualizar livro" type="error" color="#EB5E28" />}
+      {success && (
+        <Feedback
+          text="Atualizado com sucesso"
+          type="success"
+          color="#06D6A0"
+        />
+      )}
+      {error && (
+        <Feedback
+          text="Falha ao atualizar livro"
+          type="error"
+          color="#EB5E28"
+        />
+      )}
     </div>
   );
 }
