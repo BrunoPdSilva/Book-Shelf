@@ -1,3 +1,5 @@
+@import '../components/CarouselCard';
+
 .home-page {
   height: 100%;
   padding-block: 4.2rem 3.2rem;
@@ -5,7 +7,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
 
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 
   main {
     padding-bottom: 2rem;
@@ -61,14 +63,14 @@
 
           cursor: pointer;
           transition: 0.5s ease-in;
-        }
 
-        button:hover {
-          background-position: right;
+          &:hover {
+            background-position: right;
+          }
         }
       }
     }
-    .home-side-image {
+    .side-image {
       display: flex;
       justify-content: flex-end;
       height: 30rem;
@@ -113,65 +115,4 @@
 
 .home-page::-webkit-scrollbar {
   display: none;
-}
-
-@media (max-width: 980px) {
-  .home-page {
-    main header {
-      h1 {
-        font-size: var(--xl);
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-    }
-
-    .home-side-image img {
-      width: 90%;
-    }
-  }
-}
-
-@media (max-width: 880px) {
-  .home-page main header h1 {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 830px) {
-  .home-page {
-    main {
-      padding-bottom: 0rem;
-      grid-template-columns: 1fr;
-      grid-row-gap: 2.2rem;
-
-      header {
-        margin: auto;
-
-        h2 {
-          padding-bottom: 3.6rem;
-        }
-      }
-    }
-
-    .carousel {
-      margin: 2.2rem auto;
-    }
-
-    .home-side-image {
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 400px) {
-  .home-page {
-    header {
-      text-align: center;
-    }
-    .carousel {
-      margin-block: 0;
-    }
-  }
 }

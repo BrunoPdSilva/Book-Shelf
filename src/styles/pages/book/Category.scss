@@ -1,0 +1,35 @@
+.categories {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+
+  margin-bottom: 2rem;
+  
+  .category {
+    height: 4.2rem;
+    padding: 0.8rem 1.6rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  
+    background: var(--categorie-bg);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 6px;
+
+    img {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      color: var(--title)
+    }
+  }
+}

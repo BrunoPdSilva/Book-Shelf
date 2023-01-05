@@ -10,9 +10,7 @@ import Terror from '../../assets/Icons/Terror.png';
 import Humor from '../../assets/Icons/Humor.png';
 import HQ from '../../assets/Icons/HQ.png';
 
-import '../../styles/pages/book/BookCategory.scss';
-
-export function BookCategory({ type }) {
+export function Category({ type }) {
   function getImage(type) {
     switch (type) {
       case 'Ficção Científica':
@@ -43,9 +41,9 @@ export function BookCategory({ type }) {
   }
 
   return (
-    <div className="BookCategory">
-      <img src={getImage(type)} alt="" />
-      <h3 className="category-name">{type}</h3>
+    <div className="category">
+      <img src={getImage(type)} alt={type} />
+      <h3>{type}</h3>
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { dataBase } from '../../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
+import { motion } from 'framer-motion';
 
 import { useCollection } from '../../hooks/useCollection';
 import { Feedback } from '../../components/Feedback';
-
-import '../../styles/pages/dashboard/DeleteBook.scss';
 
 export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);
@@ -43,19 +42,27 @@ export function DeleteBook({ setState }) {
   }
 
   return (
-    <div className="delete-book-wrapper">
+    <motion.div
+      className="delete-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 20,
+        delay: 0.1,
+      }}
+    >
       <h2>Deletar livro</h2>
 
-      <div className="delete-input-container">
-        <input
-          type="text"
-          placeholder="Pesquisar livro"
-          onChange={e => filterBooks(e.target.value)}
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Pesquisar livro"
+        onChange={e => filterBooks(e.target.value)}
+      />
 
       {book && (
-        <div className="book-cover-container">
+        <div className="book-cover">
           <img src={book.image} alt="Capa do livro" />
         </div>
       )}
@@ -71,6 +78,6 @@ export function DeleteBook({ setState }) {
         <button onClick={() => setState('buttonsActive')}>Cancelar</button>
         {book && <button onClick={handleDelete}>Deletar</button>}
       </div>
-    </div>
+    </motion.div>
   );
 }

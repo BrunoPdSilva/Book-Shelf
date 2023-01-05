@@ -7,8 +7,6 @@ import { useLogin } from '../hooks/useLogin';
 import { Eye, EyeSlash } from 'phosphor-react';
 import SideImage from '../assets/login-image.svg';
 
-import '../styles/pages/Login.scss';
-
 export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState('');

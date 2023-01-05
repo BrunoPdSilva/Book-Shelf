@@ -14,8 +14,6 @@ import { motion } from 'framer-motion';
 import Home from '../assets/home-desktop.png';
 import Book from '../assets/book-desktop.png';
 
-import '../styles/pages/About.scss';
-
 export function About() {
   return (
     <div className="about-page">
@@ -33,7 +31,7 @@ export function About() {
       </motion.h1>
 
       <motion.section
-        className="page-images"
+        className="images"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{

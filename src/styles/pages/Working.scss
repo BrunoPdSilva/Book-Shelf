@@ -19,15 +19,3 @@
     min-height: 50rem;
   }
 }
-
-@media (max-width: 550px) {
-  .working-page {
-    h1 {
-      font-size: var(--lg);
-    }
-
-    img {
-      width: 80%;
-    }
-  }
-}

@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { BookBookmark } from 'phosphor-react';
-import '../styles/components/BookCard.scss';
 
-export function BookCard({ book }) {
+export function CarouselCard({ book }) {
   const [isCardActive, setIsCardAtive] = useState(false);
 
   return (
@@ -17,7 +16,7 @@ export function BookCard({ book }) {
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.4 }}
       >
-        <img src={book.image} alt="Card image" className="card-image" />
+        <img src={book.image} alt="Card image" />
 
         <footer className={isCardActive ? 'footer-active' : 'footer-disabled'}>
           <Link to={`/books/${book.id}`}>

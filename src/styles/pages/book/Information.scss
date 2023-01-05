@@ -1,0 +1,35 @@
+.book-page .details .information {
+  width: 100%;
+  min-height: 11rem;
+
+  padding-inline: 4rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid var(--text);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      color: var(--title);
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+      color: var(--text);
+    }
+  }
+}

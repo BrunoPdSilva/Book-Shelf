@@ -2,11 +2,10 @@ import { useState, useReducer } from 'react';
 import { useCollection } from '../../hooks/useCollection';
 import { updateDoc, doc } from 'firebase/firestore';
 import { dataBase } from '../../firebase/config';
+import { motion } from 'framer-motion';
 
 import { Feedback } from '../../components/Feedback';
 import { Input } from './Input';
-
-import '../../styles/pages/dashboard/UpdateBook.scss';
 
 const initialState = {
   title: '',
@@ -111,10 +110,20 @@ export function UpdateBook({ setState }) {
   }
 
   return (
-    <div className="update-form-wrapper">
+    <motion.div
+      className="update-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 20,
+        delay: 0.1,
+      }}
+    >
       <h2>Atualizar livro</h2>
 
-      <div className="delete-input-container">
+      <div className="search-book">
         <input
           type="text"
           placeholder="Pesquisar livro"
@@ -123,7 +132,7 @@ export function UpdateBook({ setState }) {
       </div>
 
       {book && (
-        <div className="book-cover-container">
+        <div className="book-cover">
           <img src={book.image} alt="Capa do livro" />
         </div>
       )}
@@ -225,6 +234,6 @@ export function UpdateBook({ setState }) {
           color="#EB5E28"
         />
       )}
-    </div>
+    </motion.div>
   );
 }

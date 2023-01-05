@@ -1,0 +1,247 @@
+@media (max-width: 1281px) {
+  .contact-page main .img-section img {
+    height: 52rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .contact-page main .contact-info h1 {
+    font-size: var(--xl);
+  }
+}
+
+@media (max-width: 1040px) {
+  .navbar {
+    .nav-links {
+      gap: 3.6rem;
+    }
+
+    .buttons-container {
+      gap: 0.8rem;
+
+      button {
+        padding: 1.2rem 1.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .home-page {
+    main header {
+      h1 {
+        font-size: var(--xl);
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .side-image img {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .home-page main header h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .login-page {
+    display: block;
+    margin-top: 12rem;
+
+    main {
+      display: flex;
+      justify-content: center;
+
+      .side-image {
+        display: none;
+      }
+    }
+
+    form.form .signup-message .signup {
+      text-decoration: underline;
+    }
+  }
+
+  .signup-page {
+    margin-top: 12rem;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 830px) {
+  .navbar .nav-links,
+  .navbar .buttons-container,
+  .toggleButton {
+    display: none;
+  }
+
+  .navbar-container.active {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .navbar.active {
+    padding-top: 7.6rem;
+
+    flex-direction: column;
+    justify-content: start;
+
+    .logo-image {
+      width: 18rem;
+      height: 6.8rem;
+
+      margin-bottom: 3.2rem;
+    }
+
+    .nav-links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3.2rem;
+    }
+  }
+
+  .navbar.active .nav-links li {
+    font-size: 1.8rem;
+  }
+
+  .navbar .action-btn-container {
+    flex-direction: column;
+  }
+
+  .navbar.active .buttons-container {
+    margin-top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .navbar.active .toggleButton {
+    margin-top: 2.2rem;
+    display: flex;
+  }
+
+  .navbar.active .burger-menu {
+    top: 2.3%;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  .home-page {
+    main {
+      padding-bottom: 0rem;
+      grid-template-columns: 1fr;
+      grid-row-gap: 2.2rem;
+
+      header {
+        margin: auto;
+
+        h2 {
+          padding-bottom: 3.6rem;
+        }
+      }
+    }
+
+    .carousel {
+      margin: 2.2rem auto;
+    }
+
+    .side-image {
+      justify-content: center;
+    }
+  }
+
+  .contact-page main {
+    flex-direction: column;
+    align-items: center;
+
+    .contact-info {
+      margin-top: 4rem;
+    }
+  }
+
+  .about-page .images {
+    grid-template-columns: 1fr;
+    grid-row-gap: 2.2rem;
+  }
+
+  .book-page .book-details .information {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .book-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 570px) {
+  .about-page .technologies {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .working-page {
+    h1 {
+      font-size: var(--lg);
+    }
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .book-page {
+    padding-bottom: 6.6rem;
+
+    .details .information {
+      padding-top: 1.6rem;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .contact-page main .contact-info {
+    h1 {
+      font-size: var(--lg);
+    }
+
+    div p {
+      font-size: var(--base);
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .home-page {
+    header {
+      text-align: center;
+    }
+    .carousel {
+      margin-block: 0;
+    }
+  }
+}

@@ -9,7 +9,7 @@ export function Feedback({ type, text, color }) {
       {type === 'error' ? (
         <AnimatePresence>
           <motion.div
-            className="feedback-container"
+            className="feedback"
             style={{ backgroundColor: color }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -25,7 +25,7 @@ export function Feedback({ type, text, color }) {
         </AnimatePresence>
       ) : (
         <motion.div
-          className="feedback-container"
+          className="feedback"
           style={{ backgroundColor: color }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

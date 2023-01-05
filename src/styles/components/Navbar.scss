@@ -3,56 +3,56 @@
   height: 7.2rem;
 
   background-color: #26262b;
-}
 
-.navbar {
-  width: min(100vw - 20%);
-  height: 100%;
-  margin: auto;
+  .navbar {
+    width: min(100vw - 20%);
+    height: 100%;
+    margin: auto;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  position: relative;
-}
+    position: relative;
 
-.navbar .logo-image {
-  width: 18rem;
-  height: 4.8rem;
+    .logo-image {
+      width: 18rem;
+      height: 4.8rem;
+    }
+  }
 }
 
 .navbar .nav-links {
   display: flex;
   gap: 6.8rem;
-}
 
-.navbar .nav-links li {
-  font-size: var(--sm);
-  font-weight: 500;
-  line-height: 1.9rem;
-  color: #ffffff;
+  li {
+    font-size: var(--sm);
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: #ffffff;
 
-  position: relative;
-}
+    position: relative;
 
-.navbar .nav-links li::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
 
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 250ms ease-in;
-}
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 250ms ease-in;
+    }
 
-.navbar .nav-links li:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
 }
 
 .navbar .action-btn-container {
@@ -64,38 +64,37 @@
 .navbar .buttons-container {
   display: flex;
   gap: 1.6rem;
+
+  button {
+    padding: 1.4rem 2.6rem;
+
+    border: none;
+    border-radius: 4px;
+    background-size: 300%;
+    background-position: left;
+
+    font-size: var(--sm);
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.5s ease-in;
+    background-color: transparent;
+
+    &:hover {
+      background-position: right;
+    }
+  }
+
+  button.primary-button {
+    background-image: var(--gradient1);
+    color: #ffffff;
+  }
+
+  button.secondary-button {
+    background-image: var(--gradient2);
+    color: #453d83;
+  }
 }
-
-.navbar .buttons-container button {
-  padding: 1.4rem 2.6rem;
-
-  border: none;
-  border-radius: 4px;
-  background-size: 300%;
-  background-position: left;
-
-  font-size: var(--sm);
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: 0.5s ease-in;
-  background-color: transparent;
-}
-
-.navbar .buttons-container button.primary-button {
-  background-image: var(--gradient1);
-  color: #ffffff;
-}
-
-.navbar .buttons-container button.secondary-button {
-  background-image: var(--gradient2);
-  color: #453d83;
-}
-
-.navbar .buttons-container button:hover {
-  background-position: right;
-}
-
 .burger-menu {
   display: none;
 
@@ -120,84 +119,4 @@
 
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-}
-
-@media (max-width: 1040px) {
-  .navbar .nav-links {
-    gap: 3.6rem;
-  }
-
-  .navbar .buttons-container {
-    gap: 0.8rem;
-  }
-
-  .navbar .buttons-container button {
-    padding: 1.2rem 1.8rem;
-  }
-}
-
-@media (max-width: 830px) {
-  .navbar .nav-links,
-  .navbar .buttons-container,
-  .toggleButton {
-    display: none;
-  }
-
-  .navbar-container.active {
-    height: 100vh;
-    width: 100%;
-  }
-
-  .navbar.active {
-    padding-top: 7.6rem;
-
-    flex-direction: column;
-    justify-content: start;
-  }
-
-  .navbar.active .logo-image {
-    width: 18rem;
-    height: 6.8rem;
-
-    margin-bottom: 3.2rem;
-  }
-
-  .navbar.active .nav-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3.2rem;
-  }
-
-  .navbar.active .nav-links li {
-    font-size: 1.8rem;
-  }
-
-  .navbar .action-btn-container {
-    flex-direction: column;
-  }
-
-  .navbar.active .buttons-container {
-    margin-top: 3.2rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navbar.active .buttons-container button {
-    width: 100%;
-  }
-
-  .navbar.active .toggleButton {
-    margin-top: 2.2rem;
-    display: flex;
-  }
-
-  .navbar.active .burger-menu {
-    top: 2.3%;
-  }
-
-  .burger-menu {
-    display: block;
-  }
 }

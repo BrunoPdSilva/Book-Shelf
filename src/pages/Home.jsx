@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useCollection } from '../hooks/useCollection';
+
+import { CarouselCard } from '../components/CarouselCard';
 import { motion } from 'framer-motion';
+import { Books } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 
-import { useCollection } from '../hooks/useCollection';
-import { BookCard } from '../components/BookCard';
-import { Books } from 'phosphor-react';
-
 import sideImage from '../assets/home-side-image.svg';
-import '../styles/pages/Home.scss';
 
 export function Home() {
   const { documents: books } = useCollection('books');
@@ -28,7 +27,7 @@ export function Home() {
           <h1>Encontre seus livros favoritos em um só lugar</h1>
           <h2>Aqui você encontra informações sobre todos os seus livros</h2>
 
-          <Link to="/working" className="explore-btn">
+          <Link to="/books" className="explore-btn">
             <button>
               <Books size={22} weight="duotone" color="#FFF" />
               Explorar livros
@@ -36,7 +35,7 @@ export function Home() {
           </Link>
         </motion.header>
         <motion.section
-          className="home-side-image"
+          className="side-image"
           initial={{ x: 400 }}
           animate={{ x: 0 }}
         >
@@ -65,7 +64,7 @@ export function Home() {
             dragConstraints={{ right: 0, left: -width }}
           >
             {books &&
-              books.map(book => <BookCard key={book.image} book={book} />)}
+              books.map(book => <CarouselCard key={book.image} book={book} />)}
           </motion.div>
         </motion.section>
       </motion.section>

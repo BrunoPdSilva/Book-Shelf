@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { useFetchDoc } from '../../hooks/useFetchDoc';
-import { BookDetails } from './BookDetails';
+import { Details } from './Details';
 import { BookButton } from './BookButton';
 
 import '../../styles/pages/book/Book.scss';
@@ -18,37 +18,25 @@ export function Book() {
           <header className="banner"></header>
 
           <main>
-            <section className="book-img-section">
+            <section className="book-cover">
               <motion.div
-                className="image-card"
+                className="cover-card"
                 animate={{ x: 0 }}
                 initial={{ x: -460 }}
               >
                 <img src={document.image} alt="Capa do Livro" />
               </motion.div>
 
-              <motion.div
-                className="buttons-container"
-                animate={{ x: 0 }}
-                initial={{ x: -460 }}
-                transition={{ delay: 0.3, ease: 'linear' }}
-              >
-                <a href={document.buy} target="_blank">
-                  <BookButton type="cart" />
-                </a>
-                <a href={document.download} target="_blank">
-                  <BookButton type="download" />
-                </a>
-              </motion.div>
+              <BookButton buy={document.buy} download={document.download} />
             </section>
 
             <motion.section
-              className="book-details-container"
+              className="details"
               animate={{ x: 0 }}
               initial={{ x: 1200 }}
               transition={{ delay: 0.3, ease: 'linear' }}
             >
-              <BookDetails document={document} />
+              <Details document={document} />
             </motion.section>
           </main>
         </>

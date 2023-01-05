@@ -2,10 +2,10 @@ import { useReducer, useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { dataBase } from '../../firebase/config';
 
+import { motion } from 'framer-motion';
+
 import { Feedback } from '../../components/Feedback';
 import { Input } from './Input';
-
-import '../../styles/pages/dashboard/AddBook.scss';
 
 const initialState = {
   title: '',
@@ -74,7 +74,17 @@ export function AddBook({ setState }) {
   }
 
   return (
-    <div className="add-form-wrapper">
+    <motion.div
+      className="add-form-wrapper"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 20,
+        delay: 0.1,
+      }}
+    >
       <h2>Adicionar livro</h2>
 
       <form onSubmit={handleSubmit}>
@@ -128,6 +138,6 @@ export function AddBook({ setState }) {
       {error && (
         <Feedback text="Falha ao adicionar" type="error" color="#EB5E28" />
       )}
-    </div>
+    </motion.div>
   );
 }

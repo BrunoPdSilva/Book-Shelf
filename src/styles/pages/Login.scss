@@ -1,3 +1,5 @@
+@import 'Form';
+
 .login-page {
   height: min(100vh - 8.6rem);
 
@@ -28,48 +30,28 @@
       margin-bottom: 0;
     }
 
-    p.signup-message .signup {
+    .signup-message .signup {
       color: var(--title);
       position: relative;
-    }
 
-    p.signup-message .signup::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: currentColor;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: currentColor;
 
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 250ms ease-in;
-    }
-
-    p.signup-message .signup:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-  }
-}
-
-@media (max-width: 850px) {
-  .login-page {
-    display: block;
-    margin-top: 12rem;
-
-    main {
-      display: flex;
-      justify-content: center;
-
-      .side-image {
-        display: none;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 250ms ease-in;
       }
-    }
 
-    form.form p.signup-message .signup {
-      text-decoration: underline;
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
   }
 }

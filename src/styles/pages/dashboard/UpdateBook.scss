@@ -1,4 +1,4 @@
-.update-form-wrapper {
+.update-page {
   width: 80%;
   max-width: 50rem;
 
@@ -12,106 +12,91 @@
   background-color: var(--carousel-bg);
   border-radius: 12px;
 
-  font-family: 'Montserrat';
-}
+  font-family: 'Montserrat', sans-serif;
 
-.update-form-wrapper h2 {
-  font-size: var(--lg);
-  font-weight: 600;
-  color: var(--title);
-}
+  h2 {
+    font-size: var(--lg);
+    font-weight: 600;
+    color: var(--title);
+  }
 
-.update-form-wrapper .delete-input-container {
-  width: 80%;
-}
+  .search-book {
+    width: 80%;
 
-.update-form-wrapper .delete-input-container input {
-  width: 100%;
-  height: 4rem;
+    input {
+      width: 100%;
+      height: 4rem;
 
-  margin-block: 2.6rem;
-  padding-left: 1.2rem;
+      margin-block: 2.6rem;
+      padding-left: 1.2rem;
 
-  background-color: var(--addBook-bg);
-  border: 1px solid #6f6f6f;
-  border-radius: 6px;
+      background-color: var(--addBook-bg);
+      border: 1px solid #6f6f6f;
+      border-radius: 6px;
 
-  font-size: var(--sm);
-  color: var(--title);
-}
+      font-size: var(--sm);
+      color: var(--title);
+    }
+  }
 
-.update-form-wrapper .delete-input-container button {
-  width: 4rem;
-  height: 4rem;
+  .book-cover {
+    width: 18rem;
+    height: 26rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-block: 1rem 2rem;
 
-  background-color: var(--addBook-bg);
-  border: 1px solid #6f6f6f;
-  border-radius: 6px;
+    border-radius: 6px;
 
-  cursor: pointer;
-}
+    img {
+      width: 100%;
+      height: 100%;
 
-.update-form-wrapper .book-cover-container {
-  width: 18rem;
-  height: 26rem;
+      border-radius: 8px;
+    }
+  }
 
-  margin-block: 1rem 2rem;
+  form {
+    width: 80%;
+    padding-block: 1.6rem 2.6rem;
 
-  border-radius: 6px;
-}
+    p {
+      margin-bottom: 0.6rem;
+      font-size: var(--sm);
+      font-weight: 600;
+      line-height: 2rem;
+      color: var(--title);
+    }
 
-.update-form-wrapper .book-cover-container img {
-  width: 100%;
-  height: 100%;
+    input {
+      width: 100%;
+      height: 3rem;
 
-  border-radius: 8px;
-}
+      margin-bottom: 1.2rem;
+      padding-left: 1.2rem;
 
-.update-form-wrapper form {
-  width: 80%;
-  padding-block: 1.6rem 2.6rem;
-}
+      background-color: var(--addBook-bg);
+      border: 1px solid #6f6f6f;
+      border-radius: 6px;
 
-.update-form-wrapper form p {
-  margin-bottom: 0.6rem;
-  font-size: var(--sm);
-  font-weight: 600;
-  line-height: 2rem;
-  color: var(--title);
-}
+      font-size: var(--sm);
+      color: var(--title);
+    }
 
-.update-form-wrapper form input {
-  width: 100%;
-  height: 3rem;
+    .buttons-container {
+      margin-top: 1.6rem;
 
-  margin-bottom: 1.2rem;
-  padding-left: 1.2rem;
+      display: flex;
+      gap: 1.2rem;
 
-  background-color: var(--addBook-bg);
-  border: 1px solid #6f6f6f;
-  border-radius: 6px;
+      button:nth-child(2) {
+        background-color: #ffd166;
+        color: #000;
+      }
+    }
 
-  font-size: var(--sm);
-  color: var(--title);
-}
-
-.update-form-wrapper form .buttons-container {
-  margin-top: 1.6rem;
-
-  display: flex;
-  gap: 1.2rem;
-}
-
-.update-form-wrapper form button:nth-child(2) {
-  background-color: #ffd166;
-  color: #000;
-}
-
-.update-form-wrapper form .double-input {
-  display: flex;
-  gap: 1.2rem;
+    .double-input {
+      display: flex;
+      gap: 1.2rem;
+    }
+  }
 }

@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 
 import ContactIMG from '../assets/Contact.svg';
 
-import '../styles/pages/Contact.scss';
-
 export function Contact() {
   return (
     <div className="contact-page">
-      <main className="contact-page-container">
+      <main>
         <motion.section
           className="contact-info"
           initial={{ x: -600, opacity: 0 }}

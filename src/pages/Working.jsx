@@ -1,5 +1,4 @@
 import WorkingImg from '../assets/working.svg';
-import '../styles/pages/Working.scss';
 
 export function Working() {
   return (

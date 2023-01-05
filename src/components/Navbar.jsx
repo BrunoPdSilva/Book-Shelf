@@ -36,9 +36,14 @@ export function Navbar({ toggle, theme }) {
             alt="Logo"
             className="logo-image"
             onClick={() => setShowMenu(false)}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              delay: 0.2,
+            }}
           />
         </Link>
 
@@ -48,9 +53,14 @@ export function Navbar({ toggle, theme }) {
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.3,
+                }}
               >
                 Livros
               </motion.li>
@@ -59,9 +69,14 @@ export function Navbar({ toggle, theme }) {
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.4,
+                }}
               >
                 Contato
               </motion.li>
@@ -70,9 +85,14 @@ export function Navbar({ toggle, theme }) {
               <motion.li
                 onClick={() => setShowMenu(false)}
                 whileHover={{ scale: 1.1 }}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.5,
+                }}
               >
                 Sobre
               </motion.li>
@@ -84,50 +104,72 @@ export function Navbar({ toggle, theme }) {
           {user ? (
             <div className="buttons-container">
               {user?.uid === uid ? (
-                <Link to="/dashboard">
-                  <motion.button
-                    className="secondary-button"
-                    onClick={() => setShowMenu(false)}
-                    initial={{ y: -100 }}
-                    animate={{ y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    Adicionar um livro
-                  </motion.button>
-                </Link>
+                <motion.div
+                  className="motion"
+                  onClick={() => setShowMenu(false)}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.6,
+                  }}
+                >
+                  <Link to="/dashboard">
+                    <button className="secondary-button">
+                      Adicionar livro
+                    </button>
+                  </Link>
+                </motion.div>
               ) : (
                 ''
               )}
               <motion.button
                 className="primary-button"
                 onClick={handleLogout}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.7,
+                }}
               >
                 Sair
               </motion.button>
             </div>
           ) : (
             <div className="buttons-container">
-              <Link to="/login">
-                <motion.button
-                  className="secondary-button"
-                  onClick={() => setShowMenu(false)}
-                  initial={{ y: -100 }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Login
-                </motion.button>
-              </Link>
+              <motion.div
+                className="motion"
+                onClick={() => setShowMenu(false)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.6,
+                }}
+              >
+                <Link to="/login">
+                  <button className="secondary-button">Login</button>
+                </Link>
+              </motion.div>
               <Link to="/signup" style={{ color: '#FFF' }}>
                 <motion.button
                   className="primary-button"
                   onClick={() => setShowMenu(false)}
-                  initial={{ y: -100 }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.3 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.7,
+                  }}
                 >
                   Cadastrar-se
                 </motion.button>
@@ -138,8 +180,8 @@ export function Navbar({ toggle, theme }) {
           <motion.button
             onClick={toggleTheme}
             className="toggleButton"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             whileHover={{ rotate: 360, scale: 1.1 }}
           >
             {theme === 'light' ? (

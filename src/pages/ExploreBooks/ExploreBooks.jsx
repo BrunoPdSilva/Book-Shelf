@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCollection } from '../../hooks/useCollection';
 
-import { BookCategory } from '../book/BookCategory';
+import { Category } from '../book/Category';
 import { MagnifyingGlass } from 'phosphor-react';
 import { BookComponent } from './BookComponent';
 
@@ -35,9 +35,9 @@ export function ExploreBooks() {
 
       <main>
         <aside>
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
-          <BookCategory type="Fantasia" />
+          <Category type="Fantasia" />
+          <Category type="Fantasia" />
+          <Category type="Fantasia" />
         </aside>
 
         <section className="books-container">
