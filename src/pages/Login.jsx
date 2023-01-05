@@ -48,14 +48,14 @@ export function LoginPage() {
               {showPassword ? (
                 <EyeSlash
                   size={28}
-                  color={'var(--primary-color)'}
+                  color={'var(--title)'}
                   onClick={() => setShowPassword(!showPassword)}
                   className="show-password-button"
                 />
               ) : (
                 <Eye
                   size={28}
-                  color={'var(--primary-color)'}
+                  color={'var(--title)'}
                   onClick={() => setShowPassword(!showPassword)}
                   className="show-password-button"
                 />

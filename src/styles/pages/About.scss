@@ -51,7 +51,7 @@
 
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fit, 5.6rem);
     grid-row-gap: 5.2rem;
   }
@@ -72,7 +72,7 @@
       margin-top: 2.4rem;
       font-size: var(--base);
       line-height: 2.8rem;
-      color: var(--title);
+      color: var(--text);
     }
   }
 
@@ -84,9 +84,9 @@
     margin-bottom: 2.2rem;
 
     p {
-      font-size: var(--base);
+      font-size: var(--sm);
       line-height: 2.8rem;
-      color: var(--title);
+      color: var(--text);
     }
   }
 }

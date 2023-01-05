@@ -38,12 +38,12 @@
     }
 
     &:nth-child(1) button {
-      background-image: var(--gradient1);
+      background-image: var(--purple-G);
       color: #fff;
     }
 
     &:nth-child(2) button {
-      background: var(--categorie-bg);
+      background: var(--white-to-gray);
       color: var(--title);
     }
   }

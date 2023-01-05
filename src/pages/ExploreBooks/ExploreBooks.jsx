@@ -5,7 +5,6 @@ import { Category } from '../book/Category';
 import { MagnifyingGlass } from 'phosphor-react';
 import { BookComponent } from './BookComponent';
 
-import '../../styles/pages/ExploreBooks.scss';
 
 export function ExploreBooks() {
   const { documents } = useCollection('books');
@@ -29,15 +28,13 @@ export function ExploreBooks() {
             placeholder="Procurar livro"
             onChange={e => setTerm(e.target.value)}
           />
-          <MagnifyingGlass size={22} color="var(--text)" />
+          <MagnifyingGlass size={22} color="var(--icon)" weight='bold' />
         </div>
       </header>
 
       <main>
         <aside>
-          <Category type="Fantasia" />
-          <Category type="Fantasia" />
-          <Category type="Fantasia" />
+          
         </aside>
 
         <section className="books-container">

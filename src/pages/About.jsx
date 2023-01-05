@@ -1,5 +1,6 @@
 import HTML from '../assets/html.svg';
 import CSS from '../assets/css.png';
+import Sass from '../assets/Sass.svg';
 import JavaScript from '../assets/javascript.png';
 import Vite from '../assets/vite.png';
 import React from '../assets/react.svg';
@@ -58,6 +59,7 @@ export function About() {
       >
         <Technology text="HTML" img={HTML} />
         <Technology text="CSS" img={CSS} />
+        <Technology text="Sass" img={Sass} />
         <Technology text="JavaScript" img={JavaScript} />
         <Technology text="Vite" img={Vite} />
         <Technology text="React" img={React} />
@@ -94,7 +96,7 @@ export function About() {
           delay: 0.6,
         }}
       >
-        <Copyright size={32} color="var(--title)" />
+        <Copyright size={22} color="var(--icon)" />
         <p>Copyright - Bruno Peres da Silva 2023</p>
       </motion.footer>
     </div>

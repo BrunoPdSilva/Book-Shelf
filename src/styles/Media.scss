@@ -110,7 +110,7 @@
   }
 
   .navbar.active .nav-links li {
-    font-size: 1.8rem;
+    font-size:var(--base);
   }
 
   .navbar .action-btn-container {
@@ -190,7 +190,7 @@
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 740px) {
   .about-page .technologies {
     grid-template-columns: 1fr 1fr;
   }

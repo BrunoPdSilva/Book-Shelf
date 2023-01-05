@@ -52,7 +52,6 @@ export function Navbar({ toggle, theme }) {
             <Link to="/books">
               <motion.li
                 onClick={() => setShowMenu(false)}
-                whileHover={{ scale: 1.1 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
@@ -68,10 +67,10 @@ export function Navbar({ toggle, theme }) {
             <Link to="/contact">
               <motion.li
                 onClick={() => setShowMenu(false)}
-                whileHover={{ scale: 1.1 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
+                  scale: { delay: 0 },
                   type: 'spring',
                   stiffness: 260,
                   damping: 20,
@@ -84,10 +83,10 @@ export function Navbar({ toggle, theme }) {
             <Link to="/about">
               <motion.li
                 onClick={() => setShowMenu(false)}
-                whileHover={{ scale: 1.1 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
+                  scale: { delay: 0 },
                   type: 'spring',
                   stiffness: 260,
                   damping: 20,

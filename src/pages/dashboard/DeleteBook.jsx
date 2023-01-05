@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 
 import { useCollection } from '../../hooks/useCollection';
 import { Feedback } from '../../components/Feedback';
+import { XCircle } from 'phosphor-react';
+
 
 export function DeleteBook({ setState }) {
   const [book, setBook] = useState(null);
@@ -54,6 +56,8 @@ export function DeleteBook({ setState }) {
       }}
     >
       <h2>Deletar livro</h2>
+      <XCircle size={26} color="var(--title)" className='close-button' onClick={() => setState('buttonsActive')}/>
+
 
       <input
         type="text"

@@ -6,19 +6,17 @@
   --webkit-font-smoothing: antialiased;
 
   /* COLORS */
-  --primary-color: #8078bf;
+  --purple-G: linear-gradient(135deg, #8078bf 27.4%, #574cff 100%);
+  --white-G: linear-gradient(135deg, #ededed 27.4%, #dcdafb 100%);
 
-  --gradient1: linear-gradient(135deg, #8078bf 27.4%, #574cff 100%);
-  --gradient2: linear-gradient(135deg, #ededed 27.4%, #dcdafb 100%);
-
-  --page-bg: #f6f6f6;
-  --carousel-bg: #d9d9d9;
-  --categorie-bg: #ffffff;
-  --book-card-bg: #f6f6f6;
-  --addBook-bg: #f6f6f6;
+  --background: #f6f6f6;
+  --menu-bg: #d9d9d9;
+  --white-to-gray: #ffffff;
+  --dashboard-input: #f6f6f6;
 
   --title: hsl(247, 36%, 38%, 100%);
   --text: hsl(247, 36%, 38%, 80%);
+  --icon: hsl(247, 36%, 38%, 80%);
 
   /* TYPOGRAPHY */
   --xxl: 3.6rem;
@@ -30,14 +28,14 @@
 }
 
 [data-theme='dark'] {
-  --page-bg: #121212;
-  --carousel-bg: #26262b;
-  --categorie-bg: #26262b;
-  --book-card-bg: #26262b;
-  --addBook-bg: #121212;
+  --background: #121212;
+  --menu-bg: #26262b;
+  --white-to-gray: #26262b;
+  --dashboard-input: #121212;
 
   --title: #ffffff;
   --text: rgba(255, 255, 255, 0.5);
+  --icon: #89898A;
 }
 
 * {
@@ -66,4 +64,3 @@ body,
     font-size: 52%;
   }
 }
-

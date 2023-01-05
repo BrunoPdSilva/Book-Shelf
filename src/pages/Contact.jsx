@@ -15,18 +15,18 @@ export function Contact() {
           <h1>Entre em contato com a gente!</h1>
 
           <div>
-            <MapPin size={32} color="var(--text)" />
+            <MapPin size={32} color="var(--icon)" />
             <p>R. Amauri Souza, 346</p>
           </div>
 
           <div>
-            <Envelope size={32} color="var(--text)" />
+            <Envelope size={32} color="var(--icon)" />
             <p>book-shelf@hotmail.com</p>
           </div>
 
           <a href="https://wa.me/5515988266126" target="_blank">
             <button>
-              <WhatsappLogo size={32} color="#FFF" />
+              <WhatsappLogo size={32} color="#FFF" weight='regular'/>
               <p>WhatsApp</p>
             </button>
           </a>

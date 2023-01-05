@@ -57,9 +57,15 @@ function App() {
               path="/dashboard"
               element={user?.uid === uid ? <Dashboard /> : <Navigate to="/" />}
             />
+            <Route
+              path="/contact"
+              element={user ? <Contact /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/about"
+              element={user ? <About /> : <Navigate to="/login" />}
+            />
             <Route path="/working" element={<Working />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       )}

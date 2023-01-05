@@ -4,6 +4,7 @@ import { dataBase } from '../../firebase/config';
 
 import { motion } from 'framer-motion';
 
+import { XCircle } from 'phosphor-react';
 import { Feedback } from '../../components/Feedback';
 import { Input } from './Input';
 
@@ -85,6 +86,7 @@ export function AddBook({ setState }) {
         delay: 0.1,
       }}
     >
+      <XCircle size={26} color="var(--title)" className='close-button' onClick={() => setState('buttonsActive')}/>
       <h2>Adicionar livro</h2>
 
       <form onSubmit={handleSubmit}>

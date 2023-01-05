@@ -11,11 +11,11 @@
 }
 
 .App[data-theme='light'] {
-  background-color: var(--page-bg);
+  background-color: var(--background);
 }
 
 .App[data-theme='dark'] {
-  background-color: var(--page-bg);
+  background-color: var(--background);
 }
 
 .error-message {
