@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { List, X, Sun, Moon } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
-import NavLogo from '../assets/nav-logo.svg';
+import NavLogo from '../assets/logo.svg';
 import '../styles/components/Navbar.scss';
 
 export function Navbar({ toggle, theme }) {
