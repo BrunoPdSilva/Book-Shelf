@@ -8,17 +8,20 @@ import Firebase from '../assets/firebase.png';
 import Framer from '../assets/framer.png';
 import Phosphor from '../assets/phosphor.png';
 
+import { Link } from 'react-router-dom';
 import { Technology } from '../components/Technology';
 import { Copyright } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
 import Home from '../assets/home-desktop.png';
 import Book from '../assets/book-desktop.png';
+import LogoWhiteTheme from '../assets/logo-w-theme.svg';
+import LogoDarkTheme from '../assets/logo-d-theme.svg';
 
-export function About() {
+export function About({ theme }) {
   return (
     <div className="about-page">
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -28,9 +31,16 @@ export function About() {
           delay: 0.2,
         }}
       >
-        Book Shelf
-      </motion.h1>
+        <Link to="/">
 
+        {theme === 'light' ? (
+          <img src={LogoWhiteTheme} alt="" className="logo" />
+        ) : (
+          <img src={LogoDarkTheme} alt="" className="logo" />
+        )}
+        </Link>
+      </motion.div>
+ 
       <motion.section
         className="images"
         initial={{ opacity: 0 }}
@@ -42,8 +52,26 @@ export function About() {
           delay: 0.3,
         }}
       >
-        <img src={Home} alt="" />
-        <img src={Book} alt="" />
+        <motion.img
+          src={Home}
+          alt=""
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
+        />
+        <motion.img
+          src={Book}
+          alt=""
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
+        />
       </motion.section>
 
       <motion.section

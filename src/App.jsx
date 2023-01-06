@@ -63,7 +63,7 @@ function App() {
             />
             <Route
               path="/about"
-              element={user ? <About /> : <Navigate to="/login" />}
+              element={user ? <About theme={theme} /> : <Navigate to="/login" />}
             />
             <Route path="/working" element={<Working />} />
           </Routes>
