@@ -61,7 +61,7 @@ function getImage(type) {
   }
 }
 
-export function BooksFilter({ setFilter, actualFilter }) {
+export function BooksFilter({ setFilter, actualFilter, setMenu }) {
   return (
     <>
       {categories.map(category => (
@@ -71,7 +71,10 @@ export function BooksFilter({ setFilter, actualFilter }) {
               ? 'category-button active'
               : 'category-button'
           }
-          onClick={() => setFilter(category)}
+          onClick={() => {
+            setFilter(category)
+            setMenu(false)
+          }}
           key={category}
         >
           <img src={getImage(category)} alt={category} />

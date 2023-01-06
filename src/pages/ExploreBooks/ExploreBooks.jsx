@@ -8,10 +8,13 @@ import { NoResults } from '../../components/NoResults';
 import { BookComponent } from './BookComponent';
 import { BooksFilter } from './BooksFilter';
 
+import MenuIcon from '../../assets/menu-icon.svg'
+
 export function ExploreBooks() {
   const [actualFilter, setActualFilter] = useState('Todos livros');
   const [termFilter, setTermFilter] = useState('');
   const { documents } = useCollection('books');
+  const [categorieMenu, setCategorieMenu] = useState(false);
 
   function handleChange(term) {
     setTermFilter(term.trim());
@@ -69,14 +72,19 @@ export function ExploreBooks() {
       </header>
 
       <main>
-        <aside>
+        <button className='menu-icon' onClick={() => setCategorieMenu(!categorieMenu)}>
+          <img src={MenuIcon} alt="" />
+          Categorias
+        </button>
+        <aside className={categorieMenu ? "active": ""}>
           <BooksFilter
             setFilter={setActualFilter}
             actualFilter={actualFilter}
+            setMenu={setCategorieMenu}
           />
         </aside>
 
-        <section>
+        <section className={categorieMenu ? "categorieMenu": ""}>
           {books && books.length > 0 && (
             <div className="books-container">
              {books.map(book => <BookComponent book={book} key={book.image} />)}
