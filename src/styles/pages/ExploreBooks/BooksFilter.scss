@@ -1,0 +1,33 @@
+.explore-books-page .category-button {
+  width: 100%;
+  height: 4.2rem;
+
+  padding-left: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  background-color: var(--white-to-gray);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 6px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--title);
+
+  cursor: pointer;
+
+  img {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}
+
+.explore-books-page .category-button.active {
+  background-color: #8078BF;
+  color: #FFF;
+}

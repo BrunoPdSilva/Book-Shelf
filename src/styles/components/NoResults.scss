@@ -1,0 +1,23 @@
+.NotFound {
+  margin-top: 6rem;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 37rem;
+    height: 37rem;
+  }
+
+  h2 {
+    font-family: 'Montserrat';
+    font-size: var(--lg);
+    font-weight: 500;
+    line-height: 3.9rem;
+    color: var(--title);
+  }
+}
