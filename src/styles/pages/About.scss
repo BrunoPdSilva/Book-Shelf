@@ -2,15 +2,11 @@
 
 .about-page {
   width: min(100vw - 20%);
-  height: 100%;
-
   margin: auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  font-family: 'Roboto', sans-serif;
 
   .logo {
     margin-block: 3.2rem;
@@ -58,7 +54,6 @@
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(auto-fit, 5.6rem);
     grid-row-gap: 5.2rem;
   }
 
@@ -69,15 +64,12 @@
 
     h3 {
       font-size: var(--lg);
-      font-weight: 600;
-      line-height: 2.8rem;
       color: var(--title);
     }
 
     p {
       margin-top: 2.4rem;
       font-size: var(--base);
-      line-height: 2.8rem;
       color: var(--text);
     }
   }

@@ -1,25 +1,29 @@
-import { useState } from 'react';
-
-import { Link } from 'react-router-dom';
 import { useCollection } from '../../hooks/useCollection';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import { MagnifyingGlass } from 'phosphor-react';
-import { NoResults } from '../../components/NoResults';
 import { BookComponent } from './BookComponent';
 import { BooksFilter } from './BooksFilter';
+import { NoResults } from '../../components/NoResults';
 
-import MenuIcon from '../../assets/menu-icon.svg'
+import { MagnifyingGlass } from 'phosphor-react';
+import MenuIcon from '../../assets/menu-icon.svg';
 
 export function ExploreBooks() {
+  const [showCategorie, setShowCategorie] = useState(false);
   const [actualFilter, setActualFilter] = useState('Todos livros');
-  const [termFilter, setTermFilter] = useState('');
-  const { documents } = useCollection('books');
-  const [categorieMenu, setCategorieMenu] = useState(false);
+  const [filter, setFilter] = useState('');
 
-  function handleChange(term) {
-    setTermFilter(term.trim());
+  const { documents } = useCollection('books');
+
+  function handleFilter(term) {
+    setFilter(term.trim());
     setActualFilter('custom');
-    if(term == "") { setActualFilter("Todos livros") }
+
+    if (term == '') {
+      setActualFilter('Todos livros');
+    }
   }
 
   const books =
@@ -29,7 +33,7 @@ export function ExploreBooks() {
         case 'Todos livros':
           return true;
         case 'custom':
-          return book.title.toLowerCase().includes(termFilter.toLowerCase());
+          return book.title.toLowerCase().includes(filter.toLowerCase());
         case 'Autoajuda':
         case 'Aventura':
         case 'Biografia':
@@ -48,10 +52,22 @@ export function ExploreBooks() {
       }
     });
 
+  let acc = 0.1;
+
   return (
     <div className="explore-books-page">
       <header>
-        <div className="title">
+        <motion.div
+          className="title"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            delay: 0.2,
+          }}
+        >
           <h1>Livros</h1>
           <p>
             <Link to="/" style={{ color: 'var(--title)' }}>
@@ -59,41 +75,77 @@ export function ExploreBooks() {
             </Link>
             <span> Livros</span>
           </p>
-        </div>
+        </motion.div>
 
-        <div className="input-group">
+        <motion.div
+          className="input-group"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            delay: 0.3,
+          }}
+        >
           <input
             type="text"
             placeholder="Procurar livro"
-            onChange={e => handleChange(e.target.value)}
+            onChange={e => handleFilter(e.target.value)}
           />
           <MagnifyingGlass size={22} color="var(--icon)" weight="bold" />
-        </div>
+        </motion.div>
       </header>
 
       <main>
-        <button className='menu-icon' onClick={() => setCategorieMenu(!categorieMenu)}>
-          <img src={MenuIcon} alt="" />
+        <button
+          className="menu-icon"
+          onClick={() => setShowCategorie(!showCategorie)}
+        >
+          <img src={MenuIcon} alt="Icon" />
           Categorias
         </button>
-        <aside className={categorieMenu ? "active": ""}>
+        <motion.aside
+          className={showCategorie ? 'active' : ''}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            delay: 0.2,
+          }}
+        >
           <BooksFilter
             setFilter={setActualFilter}
             actualFilter={actualFilter}
-            setMenu={setCategorieMenu}
+            setMenu={setShowCategorie}
           />
-        </aside>
+        </motion.aside>
 
-        <section className={categorieMenu ? "categorieMenu": ""}>
+        <motion.section
+          className={showCategorie ? 'categorieMenu' : ''}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            delay: 0.3,
+          }}
+        >
           {books && books.length > 0 && (
             <div className="books-container">
-             {books.map(book => <BookComponent book={book} key={book.image} />)}
+              {books.map(book => {
+                acc += 0.07;
+                return <BookComponent book={book} key={book.image} acc={acc}/>;
+              })}
             </div>
           )}
           {books && books.length === 0 && (
             <NoResults text="Desculpe, não encontramos o livro" />
           )}
-        </section>
+        </motion.section>
       </main>
     </div>
   );

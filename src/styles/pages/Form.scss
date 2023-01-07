@@ -1,21 +1,17 @@
 form.form {
   max-width: 43rem;
-  min-height: 37.6rem;
 
   display: flex;
   flex-direction: column;
 
   h1 {
     font-size: var(--xxl);
-    font-weight: 600;
-    line-height: 4.2rem;
     color: var(--title);
   }
 
   p {
     font-size: var(--base);
     font-weight: 500;
-    line-height: 2.1rem;
     color: var(--text);
 
     margin-block: 0.6rem 6rem;
@@ -26,7 +22,6 @@ form.form {
   }
 
   .input-group {
-    width: 100%;
     margin-bottom: 3.2rem;
 
     display: flex;
@@ -42,7 +37,6 @@ form.form {
       border: none;
 
       font-size: var(--sm);
-      font-weight: 400;
       line-height: 2.1rem;
       color: var(--title);
     }
@@ -61,10 +55,8 @@ form.form {
   }
 
   button {
-    width: 100%;
     padding-block: 1.2rem;
 
-    background-color: transparent;
     background-image: var(--purple-G);
     background-size: 300%;
     background-position: left;

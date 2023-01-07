@@ -83,7 +83,6 @@
 
     main {
       display: flex;
-      justify-content: center;
 
       .side-image {
         display: none;
@@ -191,7 +190,6 @@
 
   .contact-page main {
     flex-direction: column;
-    align-items: center;
 
     .contact-info {
       margin-top: 4rem;
