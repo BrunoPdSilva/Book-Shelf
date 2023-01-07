@@ -56,12 +56,12 @@ export function Home() {
         <motion.section
           className="carousel"
           ref={carousel}
-          whileTap={{ cursor: 'grabbing' }}
-        >
+          >
           <motion.div
             className="images"
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
+            whileTap={{ cursor: 'grabbing' }}
           >
             {books &&
               books.map(book => <CarouselCard key={book.image} book={book} />)}

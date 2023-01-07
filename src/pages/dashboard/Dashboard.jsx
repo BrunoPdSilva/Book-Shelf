@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { FilePlus, CloudArrowUp } from 'phosphor-react';
+import { FilePlus, CloudArrowUp, Trash } from 'phosphor-react';
 
 import { AddBook } from './AddBook';
 import { DeleteBook } from './DeleteBook';
@@ -71,7 +71,7 @@ export function Dashboard() {
               type="delete"
               setState={setAction}
             >
-              <FilePlus size={28} />
+              <Trash size={28} />
             </ActionButton>
           </motion.div>
         </section>

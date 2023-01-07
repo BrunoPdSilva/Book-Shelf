@@ -1,5 +1,5 @@
 .update-page {
-  width: 80%;
+  width: 90%;
   max-width: 50rem;
 
   margin: 2.6rem auto;
@@ -14,22 +14,21 @@
   background-color: var(--menu-bg);
   border-radius: 12px;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   
   .close-button {
     position: absolute;
-    right: 10%;
+    right: 4%;
     cursor: pointer;
   }
 
   h2 {
     font-size: var(--lg);
-    font-weight: 600;
     color: var(--title);
   }
 
   .search-book {
-    width: 80%;
+    width: 90%;
 
     input {
       width: 100%;
@@ -42,13 +41,12 @@
       border: 1px solid #6f6f6f;
       border-radius: 6px;
 
-      font-size: var(--sm);
       color: var(--title);
     }
   }
 
   .book-cover {
-    width: 18rem;
+    width: 22rem;
     height: 26rem;
 
     margin-block: 1rem 2rem;
@@ -64,13 +62,12 @@
   }
 
   form {
-    width: 80%;
-    padding-block: 1.6rem 2.6rem;
+    width: 90%;
+    padding-bottom: 2.6rem;
 
     p {
       margin-bottom: 0.6rem;
       font-size: var(--sm);
-      font-weight: 600;
       line-height: 2rem;
       color: var(--title);
     }
@@ -86,8 +83,11 @@
       border: 1px solid #6f6f6f;
       border-radius: 6px;
 
-      font-size: var(--sm);
       color: var(--title);
+    }
+
+    .double-input label {
+      width: 100%;
     }
 
     .buttons-container {

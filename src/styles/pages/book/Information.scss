@@ -1,8 +1,7 @@
 .book-page .details .information {
-  width: 100%;
   min-height: 11rem;
 
-  padding-inline: 4rem;
+  padding-inline: 1rem;
 
   display: flex;
   flex-wrap: wrap;
@@ -27,9 +26,8 @@
 
     h4 {
       font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.5rem;
       color: var(--icon);
+      text-align: center;
     }
   }
 }

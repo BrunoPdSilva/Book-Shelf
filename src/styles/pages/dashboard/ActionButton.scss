@@ -1,6 +1,6 @@
 .dashboard .action-buttons .action-button {
   width: 20rem;
-  height: 9.2rem;
+  height: 6.8rem;
 
   display: flex;
   justify-content: center;
@@ -13,10 +13,9 @@
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   font-family: 'Montserrat', sans-serif;
-  font-size: var(--sm);
-  font-weight: 700;
-  line-height: 2rem;
+  font-weight: 600;
   color: #000000;
+  
   cursor: pointer;
   transition: 0.5s ease-in-out;
 

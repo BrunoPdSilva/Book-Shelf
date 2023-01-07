@@ -1,16 +1,11 @@
 @import '../components/CarouselCard';
 
 .home-page {
-  height: 100%;
   padding-block: 4.2rem 3.2rem;
-
   overflow-x: hidden;
-  scroll-behavior: smooth;
-
   font-family: 'Montserrat', sans-serif;
 
   main {
-    padding-bottom: 2rem;
     width: min(100vw - 20%);
     margin: auto;
 
@@ -38,12 +33,11 @@
       }
 
       .explore-btn {
-        width: 100%;
-
         button {
           width: 100%;
           height: 4.6rem;
 
+          background: transparent;
           background-image: var(--purple-G);
           background-size: 300%;
           background-position: left;
@@ -58,7 +52,6 @@
 
           font-size: 1.8rem;
           font-weight: 700;
-          line-height: 2.7rem;
           color: #ffffff;
 
           cursor: pointer;
@@ -91,28 +84,23 @@
     height: 38rem;
 
     margin: 3.2rem auto;
-    padding-inline: 2.2rem;
+    padding-inline: 1.2rem;
 
     overflow: hidden;
 
     background-color: var(--menu-bg);
-    border-radius: 6px;
+    border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.35) -60px 0px 36px -28px inset,
       rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    cursor: grabbing;
     transition: 0.3s ease-in-out;
 
     .images {
-      width: auto;
+      cursor: grabbing;
       height: 100%;
 
       display: flex;
       align-items: center;
     }
   }
-}
-
-.home-page::-webkit-scrollbar {
-  display: none;
 }
