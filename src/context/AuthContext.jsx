@@ -24,7 +24,7 @@ export function AuthContextProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, initialState);
   const [userName, setUserName] = useLocalStorage('userName', '');
 
-  const uid = 'IXfpB9vObabSZn3BFRFArusqD3w1';
+  const uid = ['IXfpB9vObabSZn3BFRFArusqD3w1', 'n4q08mpJkfMO4hrbug8X4VeaVOo2'];
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, user => {

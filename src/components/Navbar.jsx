@@ -102,7 +102,7 @@ export function Navbar({ toggle, theme }) {
         <section className="action-btn-container">
           {user ? (
             <div className="buttons-container">
-              {user?.uid === uid ? (
+              {uid.includes(user?.uid) ? (
                 <motion.div
                   className="motion"
                   onClick={() => setShowMenu(false)}

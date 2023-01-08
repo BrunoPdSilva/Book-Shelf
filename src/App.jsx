@@ -55,7 +55,7 @@ function App() {
             />
             <Route
               path="/dashboard"
-              element={user?.uid === uid ? <Dashboard /> : <Navigate to="/" />}
+              element={uid.includes(user?.uid) ? <Dashboard /> : <Navigate to="/" />}
             />
             <Route
               path="/contact"
