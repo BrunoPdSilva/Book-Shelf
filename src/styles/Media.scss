@@ -308,12 +308,17 @@
 }
 
 @media (max-width: 385px) {
-  .explore-books-page main section .books-container {
-    grid-row-gap: 0;
+  .explore-books-page main {
+    section {
+      width: 100%;
 
-    .card-wrapper {
-      width: 90%;
-      height: 32rem;
+      .books-container {
+        grid-template-columns: repeat(2, 50%);
+
+        .card-wrapper footer {
+          width: 95%;
+        }
+      }
     }
   }
 }

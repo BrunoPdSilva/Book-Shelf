@@ -32,15 +32,14 @@ export function About({ theme }) {
         }}
       >
         <Link to="/">
-
-        {theme === 'light' ? (
-          <img src={LogoWhiteTheme} alt="" className="logo" />
-        ) : (
-          <img src={LogoDarkTheme} alt="" className="logo" />
-        )}
+          {theme === 'light' ? (
+            <img src={LogoWhiteTheme} alt="" className="logo" />
+          ) : (
+            <img src={LogoDarkTheme} alt="" className="logo" />
+          )}
         </Link>
       </motion.div>
- 
+
       <motion.section
         className="images"
         initial={{ opacity: 0 }}
