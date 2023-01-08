@@ -9,23 +9,30 @@
   flex-direction: column;
   align-items: center;
 
-  position: relative;
-
   background-color: var(--menu-bg);
   border-radius: 12px;
 
   font-family: 'Roboto', sans-serif;
-  
-  .close-button {
-    position: absolute;
-    right: 4%;
-    top: 9.5%;
-    cursor: pointer;
-  }
 
-  h2 {
-    font-size: var(--lg);
-    color: var(--title);
+  .update-book-header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    h2 {
+      font-size: var(--lg);
+      color: var(--title);
+    }
+
+    .close-button {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
 
   .search-book {
